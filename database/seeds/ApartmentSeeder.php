@@ -2,6 +2,7 @@
 
 use App\Apartment;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
 
 class ApartmentsSeeder extends Seeder
@@ -19,6 +20,7 @@ class ApartmentsSeeder extends Seeder
             $apartments = new Apartment();
 
             $apartments->title = $element['title'];
+            $apartments->slug = Str::slug($element['title']);
             $apartments->number_of_room = $element['number_of_room'];
             $apartments->number_of_bedroom = $element['number_of_bedroom'];
             $apartments->number_of_bathroom = $element['number_of_bathroom'];

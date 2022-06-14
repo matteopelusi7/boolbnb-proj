@@ -2,6 +2,7 @@
 
 use App\Add;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Config;
 
 class AddSeeder extends Seeder
@@ -19,6 +20,7 @@ class AddSeeder extends Seeder
             $adds = new Add();
 
             $adds->name = $el['name'];
+            $adds->slug = Str::slug($el['name']);
 
             $adds->save();
         }

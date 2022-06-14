@@ -80,7 +80,7 @@ return [
     ],
     [
         "user_id" => "4",
-        "title" => "Appartamento sul mare",
+        "title" => "Appartamento vista mare",
         "number_of_room" => "10",
         "number_of_bedroom" => "3",
         "number_of_bathroom" => "2",
@@ -91,7 +91,7 @@ return [
     ],
     [
         "user_id" => "5",
-        "title" => "Casa sul lago",
+        "title" => "Casa vista lago",
         "number_of_room" => "5",
         "number_of_bedroom" => "2",
         "number_of_bathroom" => "2",
@@ -102,7 +102,7 @@ return [
     ],
     [
         "user_id" => "5",
-        "title" => "Casa vista mare",
+        "title" => "Casa vista mare con piscina",
         "number_of_room" => "8",
         "number_of_bedroom" => "3",
         "number_of_bathroom" => "2",
@@ -113,7 +113,7 @@ return [
     ],
     [
         "user_id" => "6",
-        "title" => "Appartamento in montagna",
+        "title" => "Appartamento in montagna con piscina riscaldata",
         "number_of_room" => "7",
         "number_of_bedroom" => "3",
         "number_of_bathroom" => "3",
@@ -124,7 +124,7 @@ return [
     ],
     [
         "user_id" => "6",
-        "title" => "Appartamento sul mare",
+        "title" => "Appartamento sul mare con giardino",
         "number_of_room" => "5",
         "number_of_bedroom" => "2",
         "number_of_bathroom" => "2",
@@ -179,7 +179,7 @@ return [
     ],
     [
         "user_id" => "9",
-        "title" => "Appartamento sul mare",
+        "title" => "Appartamento a due passi dal mare",
         "number_of_room" => "8",
         "number_of_bedroom" => "3",
         "number_of_bathroom" => "2",
