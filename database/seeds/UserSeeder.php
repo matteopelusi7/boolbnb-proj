@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Config;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -13,7 +14,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         
         $users = Config::get('users');

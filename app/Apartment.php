@@ -19,6 +19,10 @@ class Apartment extends Model
         'visible',
     ];
 
+    public function users(){
+        return $this->belongsTo('App\User');
+    }
+
     public static function getUniqueSlug($title) {
         $slug = Str::slug($title);
         $slug_base = $slug;
