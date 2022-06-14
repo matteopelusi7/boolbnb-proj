@@ -28,6 +28,7 @@ class ApartmentsSeeder extends Seeder
             $apartments->address = $element['address'];
             $apartments->cover = $element['cover'];
             $apartments->visible = $element['visible'];
+            $apartments->user_id = $element['user_id'];
 
             $apartments->save();
         }
