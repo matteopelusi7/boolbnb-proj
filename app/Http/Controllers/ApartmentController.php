@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Apartment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmentController extends Controller
 {
@@ -27,7 +28,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.apartments.create');
     }
 
     /**
@@ -38,7 +39,35 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:200',
+            'number_of_room' => 'required|string|max:10',
+            'number_of_bedroom' => 'required|string|max:10',
+            'number_of_bathroom' => 'required|string|max:10',
+            'sqm' => 'required|string|max:100',
+            'address' => 'required|string|max:200',
+            'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
+            'visible' => 'boolean',
+            'user_id' => 'numeric'
+        ]);
+
+        $data = $request->all();
+
+        if(array_key_exists('cover', $data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = str_replace('uploads/', 'storage/uploads/', $cover_path);
+        };
+
+        $slug = Apartment::getUniqueSlug($data['title']);
+
+        $apartments = new Apartment();
+        $apartments->fill($data);
+        $apartments->slug = $slug;
+        $apartments->user_id = Auth::id();
+
+        $apartments->save();
+
+        return redirect()->route('admin.apartments.index');
     }
 
     /**
@@ -58,9 +87,10 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        //
+        $user = Auth::user();
+        return view('admin.apartments.edit', compact('apartment','user'));
     }
 
     /**
@@ -70,9 +100,33 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:200',
+            'number_of_room' => 'required|string|max:10',
+            'number_of_bedroom' => 'required|string|max:10',
+            'number_of_bathroom' => 'required|string|max:10',
+            'sqm' => 'required|string|max:100',
+            'address' => 'required|string|max:200',
+            'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
+            'visible' => 'boolean',
+        ]);
+
+        $data = $request->all();
+
+        if( $apartment->title != $data['title'] ){
+            $slug = Apartment::getUniqueSlug($data['title']);
+            $data['slug'] = $slug;
+        };
+
+        if(array_key_exists('cover', $data)) {
+            $cover_path = Storage::put('uploads', $data['cover']);
+            $data['cover'] = $cover_path;
+        };
+        
+        $apartment->update($data);
+        return redirect()->route('admin.apartments.index');
     }
 
     /**
@@ -81,8 +135,10 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->delete();
+
+        return redirect()->route('admin.apartments.index');
     }
 }
