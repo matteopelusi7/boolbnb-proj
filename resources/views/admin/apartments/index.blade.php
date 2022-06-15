@@ -9,7 +9,7 @@
 
         @foreach ($apartments as $apartment)
 
-            <div class="d-flex mt-5">
+            <div class="d-flex mt-5 mb-5">
                 <div>
                     <img src="{{asset($apartment->cover)}}" alt="">
                 </div>
@@ -26,7 +26,10 @@
                 @endif
             </div>
             
-        @endforeach
+            @endforeach
+            
+            <a class="btn btn-primary" href="{{route('admin.apartments.create')}}">Aggiungi appartamento</a>
+            <a class="btn btn-primary" href="{{route('admin.dashboard.index')}}">Torna alla dashboard</a>
         
     </div>
 </div>
