@@ -13,8 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
+            AddSeeder::class,
             ApartmentsSeeder::class,
-            AddSeeder::class
         ]);
     }
 }
