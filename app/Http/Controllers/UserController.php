@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Add;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -13,7 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $adds = Add::where('pivot->user_id', $user->id);
+        
+        return view('admin.users.index', compact('user','adds'));
     }
 
     /**

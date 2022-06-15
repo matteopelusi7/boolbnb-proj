@@ -13,10 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function() {
+        Route::resource('dashboard', 'UserController');
+        Route::resource('apartments', 'ApartmentController');
+});
+
+Route::fallback(function () {
+    return view('home');
+});
