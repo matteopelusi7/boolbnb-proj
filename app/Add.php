@@ -12,6 +12,10 @@ class Add extends Model
         'slug',
     ];
 
+    public function apartments() {
+        return $this->belongsToMany('App\Apartment');
+    }
+
     public static function getUniqueSlug($name) {
         $slug = Str::slug($name);
         $slug_base = $slug;
