@@ -3,22 +3,24 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="justify-content-center">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        <h2 class="text-center mb-3">Informazioni personali:</h2>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+        <div class="mt-5">
+            <p>Nome: {{ $user->name }}</p>
+            <p>Cognome: {{ $user->surname }}</p>
+            <p>Data di nascita: {{ $user->date_of_birth }}</p>
+            <p>Email: {{ $user->email }}</p>
+            <p>Data di iscrizione: {{ $user->created_at }}</p>
         </div>
+
+        <div>
+            <button>
+                <a href="{{ route('admin.apartments.index') }}">Vedi i tuoi appartamenti</a>
+            </button>
+        </div>
+        
     </div>
 </div>
 
