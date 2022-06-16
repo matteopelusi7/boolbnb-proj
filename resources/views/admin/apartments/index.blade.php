@@ -5,7 +5,7 @@
 
 <div class="container">
     {{-- pulsante create  --}}
-    <div class="mb-3">
+    <div>
         <a class="btn btn-primary" href="{{route('admin.apartments.create')}}">Aggiungi appartamento</a>
         <a class="btn btn-primary" href="{{route('admin.dashboard.index')}}">Torna alla dashboard</a>
     </div>
@@ -22,6 +22,7 @@
                 <th scope="col">Metri quadri</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Visibilità</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
         </thead>
