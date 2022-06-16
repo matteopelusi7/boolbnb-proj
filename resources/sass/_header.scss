@@ -1,0 +1,38 @@
+.btn-nav-register {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 70% 30% 76% 24% / 44% 73% 27% 56%;
+}
+
+.btn-nav-register:hover {
+    background-color: #fc1b45;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-nav-menu {
+    background-color: #ffd47c;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 27% 43% 38% 19% / 34% 57% 21% 78%;
+
+    .btn-nav-item:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+}
+
+.btn-nav-searchGv {
+    color: black;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 20px;
+    z-index: 1;
+}
+
+.btn-nav-searchGv:focus-visible {
+    outline: none;
+    box-shadow: 0px 0px 10px black;
+}
+
+.bg-it {
+    background-color: #ff385c;
+}
