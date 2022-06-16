@@ -20,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')->group(function () {
 
-    Route::resource('home', 'ApartmentController')->only([
+    Route::resource('home', 'UserController')->only([
+        'index', 'show'
+    ]);
+    Route::resource('apartment', 'ApartmentController')->only([
         'index', 'show'
     ]);
     

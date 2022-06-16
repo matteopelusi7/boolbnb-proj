@@ -3616,7 +3616,7 @@ var render = function () {
                 _c(
                   "ul",
                   { staticClass: "d-flex flex-wrap p-0 list-wrap" },
-                  _vm._l(_vm.apartment, function (el) {
+                  _vm._l(_vm.apartment.apartments, function (el) {
                     return _c("li", { key: el.id }, [
                       _c("img", { attrs: { src: el.cover, alt: "" } }),
                     ])

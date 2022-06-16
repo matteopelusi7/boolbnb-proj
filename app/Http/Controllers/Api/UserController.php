@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Apartment;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
-class ApartmentController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,11 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::with('apartments')->orderBy('name', 'asc')->get()->all();
+
+        return response()->json([
+            'users' => $users,
+        ]);
     }
 
     /**
@@ -47,7 +52,7 @@ class ApartmentController extends Controller
      */
     public function show($slug)
     {
-        $apartment = User::with('apartments')->where('slug', $slug)->first();
+        $apartment = User::where('slug', $slug)->first();
 
         if ($apartment) {
             // Nel caso trovera il post c'è la mostrerà

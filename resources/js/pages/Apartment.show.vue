@@ -4,7 +4,7 @@
             <div class="container py-2">
                 <div class="row">
                     <ul class="d-flex flex-wrap p-0 list-wrap">
-                        <li v-for="el in apartment" :key="el.id">
+                        <li v-for="el in apartment.apartments" :key="el.id">
                             <img :src="el.cover" alt="">
                         </li>
                     </ul>
