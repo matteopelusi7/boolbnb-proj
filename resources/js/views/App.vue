@@ -16,7 +16,7 @@
                 </ul>
 
                 <input  class="form-control  font-size  col-4   text-center  rounded-pill  mr-sm-2  pl-5 d-none d-md-block"  
-                    type="search"  placeholder="Cerca Appartamenti..."  aria-label="Search" v-model="searchbarFilter"/>
+                    type="search"  placeholder="Cerca Appartamenti..."  aria-label="Search"/>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav align-items-end ml-auto">
