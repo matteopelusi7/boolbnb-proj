@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <div id="root">Vue</div>
+    <div id="root"></div>
 
     <script src="{{ asset('js/front.js') }}"></script>
 

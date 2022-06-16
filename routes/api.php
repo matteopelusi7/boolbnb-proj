@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::namespace('Api')->group(function () {
+
+    Route::resource('home', 'UserController')->only([
+        'index', 'show'
+    ]);
+    Route::resource('apartment', 'ApartmentController')->only([
+        'index', 'show'
+    ]);
+    
+});
