@@ -40,10 +40,10 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:200',
-            'number_of_room' => 'required|string|max:10',
-            'number_of_bedroom' => 'required|string|max:10',
-            'number_of_bathroom' => 'required|string|max:10',
+            'title' => 'required|string|min:7|max:200',
+            'number_of_room' => 'required|numeric|max:10',
+            'number_of_bedroom' => 'required|numeric|max:10',
+            'number_of_bathroom' => 'required|numeric|max:10',
             'sqm' => 'required|string|max:100',
             'address' => 'required|string|max:200',
             'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
@@ -103,10 +103,10 @@ class ApartmentController extends Controller
     public function update(Request $request, Apartment $apartment)
     {
         $request->validate([
-            'title' => 'required|string|max:200',
-            'number_of_room' => 'required|string|max:10',
-            'number_of_bedroom' => 'required|string|max:10',
-            'number_of_bathroom' => 'required|string|max:10',
+            'title' => 'required|string|min:7|max:200',
+            'number_of_room' => 'required|numeric|max:10',
+            'number_of_bedroom' => 'required|numeric|max:10',
+            'number_of_bathroom' => 'required|numeric|max:10',
             'sqm' => 'required|string|max:100',
             'address' => 'required|string|max:200',
             'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
