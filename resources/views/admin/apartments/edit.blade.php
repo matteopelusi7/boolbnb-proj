@@ -19,7 +19,7 @@
         {{-- numero stanze --}}
         <div class="mb-3">
           <label for="number_of_room" class="form-label">Numero di stanze</label>
-          <textarea class="form-control @error('number_of_room') is-invalid @enderror" name="number_of_room" id="number_of_room" rows="3"> {{old('number_of_room')?: $apartment->number_of_room}} </textarea>
+          <input type="text" class="form-control @error('number_of_room') is-invalid @enderror" name="number_of_room" id="number_of_room" rows="3" value="{{old('number_of_room')?: $apartment->number_of_room}}">
           @error('number_of_room')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror
@@ -28,7 +28,7 @@
         {{-- numero letti --}}
         <div class="mb-3">
           <label for="number_of_bedroom" class="form-label">Numero di letti</label>
-          <textarea required class="form-control @error('number_of_bedroom') is-invalid @enderror" name="number_of_bedroom" id="number_of_bedroom" rows="3"> {{old('number_of_bedroom')?: $apartment->number_of_bedroom}} </textarea>
+          <input type="text" required class="form-control @error('number_of_bedroom') is-invalid @enderror" name="number_of_bedroom" id="number_of_bedroom" rows="3" value="{{old('number_of_bedroom')?: $apartment->number_of_bedroom}}">
           @error('number_of_bedroom')
               <div class="invalid-feedback"> {{$message}} </div>
           @enderror

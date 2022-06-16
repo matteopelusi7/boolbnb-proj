@@ -16,9 +16,7 @@
         </div>
 
         <div>
-            <button>
-                <a href="{{ route('admin.apartments.index') }}">Vedi i tuoi appartamenti</a>
-            </button>
+            <a class="btn btn-small btn-primary" href="{{ route('admin.apartments.index') }}">Vedi i tuoi appartamenti</a>
         </div>
         
     </div>
