@@ -161,13 +161,13 @@
                                 <a href="#">Opportunità di lavoro</a>
                             </li>
                             <li>
-                                <a href="#">Invstitori</a>
+                                <a href="#">Investitori</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 d-flex justify-content-between py-2 p-0">
+                    <div class="col-12 d-flex justify-content-between flex-wrap py-2 p-0">
                         <div class="d-flex list-item">
                             <a href="#">© 2022 Airbnb, Inc.</a>
                             <a href="#">Privacy</a>
@@ -176,7 +176,7 @@
                             <a href="#">Dettagli dell' Azienda</a>
                         </div>
                         <div>
-                            <div class="d-flex list-item">
+                            <div class="d-flex list-item py-3">
                                 <a class="it" href="#">Italiano (IT)</a>
                                 <a class="it" href="#">€ EUR</a>
                             </div>

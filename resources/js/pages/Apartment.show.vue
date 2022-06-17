@@ -7,6 +7,20 @@
                 <div class="row m-0">
                     <img :src="apartment.cover" class="border-rd opacity" width="100%" height="500px" alt="">
                 </div>
+                <div class="mt-4 d-flex flex-column gap-bg">
+                    <h3 class="mb-3">Informazioni appartmento:</h3>
+                    <p class="m-0">Numero di stanze: {{ apartment.number_of_room }}</p>
+                    <p class="m-0">Numero di letti: {{ apartment.number_of_bedroom }}</p>
+                    <p class="m-0">Numero di bagni: {{ apartment.number_of_bathroom }}</p>
+                    <p class="m-0">Metri quadri: {{ apartment.sqm }}</p>
+                    <p class="m-0">Media recensioni: {{ vote[random()].rec}}</p>
+                </div>
+                <div class="mt-4 ">
+                    <h4 class="mb-3">Servizi Aggiuntivi:</h4>
+                    <ul class="p-0">
+                        <li v-for="el in apartment.adds" :key="el.id">{{ el.name }}</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -28,6 +42,13 @@ export default {
         return {
             apartment: [],
             loading: false,
+            vote: [
+                { id: 1, rec: '4.88'},
+                { id: 2, rec: '5.00'},
+                { id: 3, rec: '4.70'},
+                { id: 4, rec: '4.50'},
+                { id: 5, rec: '4.20'},
+            ],
         };
     },
     methods: {
@@ -45,6 +66,9 @@ export default {
                     this.$router.push("/404");
                 });
         },
+        random: function () {
+            return Math.floor(Math.random()*5);
+        },
     },
     mounted() {
         this.fetchApartment();
@@ -55,6 +79,10 @@ export default {
 
 <style lang="scss" scoped>
 
+ul {
+    list-style: none;
+}
+
 .border-rd {
     border-radius: 12px;
     cursor: pointer;
@@ -63,6 +91,10 @@ export default {
 .opacity:hover {
     filter: contrast(80%);
     transition: all 0.3s ease-in-out;
+}
+
+.gap-bg {
+    gap: 15px;
 }
 
 </style>
