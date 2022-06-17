@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Apartment;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
@@ -47,7 +48,7 @@ class ApartmentController extends Controller
      */
     public function show($slug)
     {
-        $apartment = User::with('apartments')->where('slug', $slug)->first();
+        $apartment = Apartment::where('slug', $slug)->first();
 
         if ($apartment) {
             // Nel caso trovera il post c'è la mostrerà

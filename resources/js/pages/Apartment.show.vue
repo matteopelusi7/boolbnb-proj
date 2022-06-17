@@ -2,12 +2,10 @@
     <div>
         <div v-if="loading">
             <div class="container py-2">
-                <div class="row">
-                    <ul class="d-flex flex-wrap p-0 list-wrap">
-                        <li v-for="el in apartment.apartments" :key="el.id">
-                            <img :src="el.cover" alt="">
-                        </li>
-                    </ul>
+                <h2>{{ apartment.title }}</h2>
+                <p>{{ apartment.address }}</p>
+                <div class="row m-0">
+                    <img :src="apartment.cover" class="border-rd opacity" width="100%" height="500px" alt="">
                 </div>
             </div>
         </div>
@@ -57,6 +55,14 @@ export default {
 
 <style lang="scss" scoped>
 
+.border-rd {
+    border-radius: 12px;
+    cursor: pointer;
+}
 
+.opacity:hover {
+    filter: contrast(80%);
+    transition: all 0.3s ease-in-out;
+}
 
 </style>

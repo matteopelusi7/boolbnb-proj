@@ -16,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('apartments')->orderBy('name', 'asc')->get()->all();
+        $users = Apartment::orderBy('title', 'asc')->get()->all();
 
         return response()->json([
             'users' => $users,
