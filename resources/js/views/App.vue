@@ -29,9 +29,9 @@
                         <a class="nav-link text-center font-weight-bold text-white" href="/register">Iscriviti</a>
                     </li>
                 </ul>
-                 <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link text-center font-weight-bold text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                 <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link text-center font-weight-bold text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    
-                                </a>
+                                </a> -->
             </div>
         </div>
     </nav>
