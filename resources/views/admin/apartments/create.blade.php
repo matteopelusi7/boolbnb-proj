@@ -80,6 +80,30 @@
             @error('visible')
                 <div class="invalid-feedback">{{$message}}</div>
             @enderror
+
+            {{-- adds --}}
+
+            <div class="form-group form-check row py-3">
+                <label for="adds"
+                    class="col-form-label text-md-right">Servizi aggiuntivi</label>
+                <div class="row m-0 py-2 d-flex flex-column pb-3">
+                @foreach ($adds as $add)
+                <div class="col-3 m-0">
+                    <input type="checkbox" class="form-check-input @error('adds') is-invalid @enderror"
+                        value="{{ $add->id }}"
+                        {{ is_array(old('adds')) && in_array($add->id, old('adds')) ? ' checked' : '' }}
+                        oninvalid="this.setCustomValidity('Inserisci almeno un servizio aggiuntivo')"
+                        oninput="this.setCustomValidity('')"
+                        name="adds[]" id="add-{{ $add->id }}">
+                    <label class="form-check-label" for="adds-{{ $add->id }}">{{ $add->name }}</label>
+                </div>
+                @endforeach
+                @error('adds')
+                    <span class="text-danger m-0 pt-2" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
     
     
     <button type="submit" class="btn btn-primary">Crea</button>
