@@ -20,6 +20,7 @@
                 <th scope="col">Numero letti</th>
                 <th scope="col">Numero Bagni</th>
                 <th scope="col">Metri quadri</th>
+                <th scope="col">Servizi Aggiuntivi</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Visibilità</th>
                 <th scope="col"></th>
@@ -27,6 +28,7 @@
             </tr>
         </thead>
         <tbody>
+            {{-- @dump($apartments->adds) --}}
             @foreach($apartments as $apartment)
                 <tr>
                     <td>{{ $apartment->title }}</td>
@@ -41,6 +43,11 @@
                     <td>{{ $apartment->number_of_bedroom }}</td>
                     <td>{{ $apartment->number_of_bathroom }}</td>
                     <td>{{ $apartment->sqm }}</td>
+                    <td>
+                        @foreach($apartment->adds as $add)
+                            <p>{{ $add->name }}</p>
+                        @endforeach
+                    </td>
                     <td>{{ $apartment->address }}</td>
                     @if ($apartment->visible == 0)
                         <td>
@@ -58,7 +65,7 @@
                         <form action="{{route('admin.apartments.destroy', $apartment)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-small w-100 btn-danger" onclick="return confirm('Sei sicuro di voler rimuovere questo piatto dal menù definitivamente?')">Cancella</button>
+                            <button type="submit" class="btn btn-small w-100 btn-danger" onclick="return confirm('Sei sicuro di voler rimuovere questo appartamento definitivamente?')">Cancella</button>
                         </form>
                     </td>
                 </tr>

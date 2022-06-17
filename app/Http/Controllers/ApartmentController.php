@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Add;
 use App\Apartment;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -14,11 +16,12 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Apartment $apartment)
     {
         $apartments = Apartment::where('user_id', Auth::id())->orderBy('created_at','asc')->get();
+        $adds = Add::where('pivot->apartment_id', $apartment->id);
 
-        return view('admin.apartments.index', compact('apartments'));
+        return view('admin.apartments.index', compact(['apartments', 'adds']));
     }
 
     /**
@@ -28,7 +31,9 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        return view('admin.apartments.create');
+        $adds = Add::all();
+
+        return view('admin.apartments.create', compact('adds'));
     }
 
     /**
@@ -48,6 +53,7 @@ class ApartmentController extends Controller
             'address' => 'required|string|max:200',
             'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
             'visible' => 'boolean',
+            'adds' => ['exists:adds,id','required'],
             'user_id' => 'numeric'
         ]);
 
@@ -66,6 +72,7 @@ class ApartmentController extends Controller
         $apartments->user_id = Auth::id();
 
         $apartments->save();
+        $apartments->adds()->sync($data['adds']); 
 
         return redirect()->route('admin.apartments.index');
     }
@@ -90,7 +97,9 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         $user = Auth::user();
-        return view('admin.apartments.edit', compact('apartment','user'));
+        $adds = Add::all();
+
+        return view('admin.apartments.edit', compact('apartment','user', 'adds',));
     }
 
     /**
@@ -110,6 +119,7 @@ class ApartmentController extends Controller
             'sqm' => 'required|string|max:100',
             'address' => 'required|string|max:200',
             'cover' => 'file|mimes:jpg,jpeg,gif,png,svg|nullable',
+            'adds' => ['exists:adds,id','required'],
             'visible' => 'boolean',
         ]);
 
@@ -126,6 +136,7 @@ class ApartmentController extends Controller
         };
         
         $apartment->update($data);
+        $apartment->adds()->sync($data['adds']); 
         return redirect()->route('admin.apartments.index');
     }
 

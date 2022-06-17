@@ -48,7 +48,7 @@ class ApartmentController extends Controller
      */
     public function show($slug)
     {
-        $apartment = Apartment::where('slug', $slug)->first();
+        $apartment = Apartment::with('adds')->where('slug', $slug)->first();
 
         if ($apartment) {
             // Nel caso trovera il post c'è la mostrerà

@@ -9,7 +9,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
 
@@ -29,9 +29,7 @@
                         <a class="nav-link text-center font-weight-bold text-white" href="/register">Iscriviti</a>
                     </li>
                 </ul>
-                 <!-- <a id="navbarDropdown" class="nav-link dropdown-toggle nav-link text-center font-weight-bold text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   
-                                </a> -->
+                
             </div>
         </div>
     </nav>
@@ -126,13 +124,13 @@
                             <a href="#">Opportunità di lavoro</a>
                         </li>
                         <li>
-                            <a href="#">Invstitori</a>
+                            <a href="#">Investitori</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 d-flex justify-content-between py-2 p-0">
+                <div class="col-12 d-flex justify-content-between flex-wrap py-2 p-0">
                     <div class="d-flex list-item">
                         <a href="#">© 2022 Airbnb, Inc.</a>
                         <a href="#">Privacy</a>
@@ -141,7 +139,7 @@
                         <a href="#">Dettagli dell' Azienda</a>
                     </div>
                     <div>
-                        <div class="d-flex list-item">
+                        <div class="d-flex list-item py-3">
                             <a class="it" href="#">Italiano (IT)</a>
                             <a class="it" href="#">€ EUR</a>
                         </div>

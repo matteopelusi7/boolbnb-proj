@@ -1986,6 +1986,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1995,7 +2009,23 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apartment: [],
-      loading: false
+      loading: false,
+      vote: [{
+        id: 1,
+        rec: '4.88'
+      }, {
+        id: 2,
+        rec: '5.00'
+      }, {
+        id: 3,
+        rec: '4.70'
+      }, {
+        id: 4,
+        rec: '4.50'
+      }, {
+        id: 5,
+        rec: '4.20'
+      }]
     };
   },
   methods: {
@@ -2012,6 +2042,9 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.$router.push("/404");
       });
+    },
+    random: function random() {
+      return Math.floor(Math.random() * 5);
     }
   },
   mounted: function mounted() {
@@ -2282,8 +2315,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -2319,7 +2350,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".border-rd[data-v-b8678cfc] {\n  border-radius: 12px;\n  cursor: pointer;\n}\n.opacity[data-v-b8678cfc]:hover {\n  filter: contrast(80%);\n  transition: all 0.3s ease-in-out;\n}", ""]);
+exports.push([module.i, "ul[data-v-b8678cfc] {\n  list-style: none;\n}\n.border-rd[data-v-b8678cfc] {\n  border-radius: 12px;\n  cursor: pointer;\n}\n.opacity[data-v-b8678cfc]:hover {\n  filter: contrast(80%);\n  transition: all 0.3s ease-in-out;\n}\n.gap-bg[data-v-b8678cfc] {\n  gap: 15px;\n}", ""]);
 
 // exports
 
@@ -3694,6 +3725,57 @@ var render = function () {
                   },
                 }),
               ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-4 d-flex flex-column gap-bg" }, [
+                _c("h3", { staticClass: "mb-3" }, [
+                  _vm._v("Informazioni appartmento:"),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(
+                    "Numero di stanze: " + _vm._s(_vm.apartment.number_of_room)
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(
+                    "Numero di letti: " +
+                      _vm._s(_vm.apartment.number_of_bedroom)
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(
+                    "Numero di bagni: " +
+                      _vm._s(_vm.apartment.number_of_bathroom)
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v("Metri quadri: " + _vm._s(_vm.apartment.sqm)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(
+                    "Media recensioni: " + _vm._s(_vm.vote[_vm.random()].rec)
+                  ),
+                ]),
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mt-4 " }, [
+                _c("h4", { staticClass: "mb-3" }, [
+                  _vm._v("Servizi Aggiuntivi:"),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  { staticClass: "p-0" },
+                  _vm._l(_vm.apartment.adds, function (el) {
+                    return _c("li", { key: el.id }, [_vm._v(_vm._s(el.name))])
+                  }),
+                  0
+                ),
+              ]),
             ]),
           ])
         : _c("LoadingWheel"),
@@ -3876,7 +3958,7 @@ var staticRenderFns = [
           _c(
             "div",
             {
-              staticClass: "collapse navbar-collapse",
+              staticClass: "navbar-collapse",
               attrs: { id: "navbarSupportedContent" },
             },
             [
@@ -4077,7 +4159,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Invstitori")]),
+                _c("a", { attrs: { href: "#" } }, [_vm._v("Investitori")]),
               ]),
             ]),
           ]),
@@ -4086,7 +4168,10 @@ var staticRenderFns = [
         _c("div", { staticClass: "row" }, [
           _c(
             "div",
-            { staticClass: "col-12 d-flex justify-content-between py-2 p-0" },
+            {
+              staticClass:
+                "col-12 d-flex justify-content-between flex-wrap py-2 p-0",
+            },
             [
               _c("div", { staticClass: "d-flex list-item" }, [
                 _c("a", { attrs: { href: "#" } }, [
@@ -4105,7 +4190,7 @@ var staticRenderFns = [
               ]),
               _vm._v(" "),
               _c("div", [
-                _c("div", { staticClass: "d-flex list-item" }, [
+                _c("div", { staticClass: "d-flex list-item py-3" }, [
                   _c("a", { staticClass: "it", attrs: { href: "#" } }, [
                     _vm._v("Italiano (IT)"),
                   ]),
