@@ -16,23 +16,6 @@ class MessageController extends Controller
      */
     public function index(Apartment $apartment)
     {
-        // $apartments = Apartment::where('user_id', Auth::id())->get();
-
-        // $apartments_id = [];
-        // $messages = [];
-
-        // foreach ($apartments as $apartment) {
-        //     $apartment_id = $apartment['id'];
-
-        //     array_push($apartments_id, $apartment_id);
-        //     $tests = Message::where('apartment_id', $apartment_id)->orderBy('created_at', 'desc')->get();
-
-        //     foreach ($tests as $test) {
-        //         if ($test != null) {
-        //             array_push($messages, $test);
-        //         }
-        //     }
-        // }
         $apartments = Apartment::where('user_id', Auth::id())->get();
         $apartments_id = $apartments->pluck('id'); 
         $messages = Message::whereIn('apartment_id', $apartments_id)->orderBy('created_at', 'desc')->get();

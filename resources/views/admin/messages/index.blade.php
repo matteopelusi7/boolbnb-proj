@@ -6,7 +6,7 @@
 <div class="container">
     {{-- pulsante create  --}}
     <div>
-        <a class="btn btn-primary" href="{{route('admin.apartments.create')}}">Aggiungi appartamento</a>
+        <a class="btn btn-primary" href="{{route('admin.apartments.index')}}">Torna agli appartmenti</a>
         <a class="btn btn-primary" href="{{route('admin.dashboard.index')}}">Torna alla dashboard</a>
     </div>
 
@@ -21,7 +21,7 @@
             @foreach($messages as $message)
                 <tr>
                     <td>
-                    <div>
+                        <div>
                             <p>Messaggio da: {{ $message->email }}</p>
                             <p>Testo Messaggio: {{ $message->text }}</p>
                         </div>

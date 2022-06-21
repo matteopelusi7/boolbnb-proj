@@ -23,19 +23,20 @@
                 </div>
             </div>
 
-            <div>
+            <div class="container py-2">
+                <h2>Invia un messaggio al proprietario dell 'appartamento per ulteriori informazioni</h2>
                <form id="message-form" @submit.prevent="sendMessage">
                     <div class="form-group">
-                        <label class="required-field">Name</label>
-                        <input type="text" class="form-control my_form" id="text" v-model="form.text" placeholder="Name" required>
+                        <label class="required-field">Email:</label>
+                        <input type="email" class="form-control my_form" id="email" v-model="form.email" required>
                     </div>
                     <div class="form-group">
-                        <label class="required-field">Email address</label>
-                        <input type="email" class="form-control my_form" id="email" v-model="form.email" placeholder="Name@example.com" required>
+                        <label class="required-field">Descrizione:</label>
+                        <textarea class="form-control my_form" id="text" v-model="form.text" placeholder="" required></textarea>
                     </div>
                     
-                    <button class="btn btn-dark" type="submit">
-                            <span v-if="success == null || success == true">Send</span>
+                    <button class="btn bg-it text-white" type="submit">
+                            <span v-if="success == null || success == true">Invia</span>
                         <div v-if="success == false" class="spinner-border" role="status">
                         </div>
                     </button>
@@ -138,6 +139,10 @@ ul {
 
 .gap-bg {
     gap: 15px;
+}
+
+.bg-it {
+    background-color: #ff385c;
 }
 
 </style>
