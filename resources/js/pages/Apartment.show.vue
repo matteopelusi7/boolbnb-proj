@@ -22,6 +22,26 @@
                     </ul>
                 </div>
             </div>
+
+            <div>
+               <form id="message-form" @submit.prevent="sendMessage">
+                    <div class="form-group">
+                        <label class="required-field">Name</label>
+                        <input type="text" class="form-control my_form" id="text" v-model="form.text" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="required-field">Email address</label>
+                        <input type="email" class="form-control my_form" id="email" v-model="form.email" placeholder="Name@example.com" required>
+                    </div>
+                    
+                    <button class="btn btn-dark" type="submit">
+                            <span v-if="success == null || success == true">Send</span>
+                        <div v-if="success == false" class="spinner-border" role="status">
+                        </div>
+                    </button>
+                </form>
+            </div>
+
         </div>
 
         <LoadingWheel v-else />
@@ -42,6 +62,7 @@ export default {
         return {
             apartment: [],
             loading: false,
+            success: null,
             vote: [
                 { id: 1, rec: '4.88'},
                 { id: 2, rec: '5.00'},
@@ -49,6 +70,10 @@ export default {
                 { id: 4, rec: '4.50'},
                 { id: 5, rec: '4.20'},
             ],
+             form: {
+                email: "",
+                text: "",
+            }
         };
     },
     methods: {
@@ -69,6 +94,24 @@ export default {
         random: function () {
             return Math.floor(Math.random()*5);
         },
+        sendMessage() {
+                this.success = false
+                axios.post(`/api/messages`, {
+                    'apartment_id': this.apartment.id,
+                    'email': this.form.email,
+                    'text': this.form.text
+                })
+                .then(response => {
+                    if(response.data.success === true){
+                        this.success = true
+                        this.form.email = ''
+                        this.form.text = ''
+                        setTimeout(() => {
+                            this.success = null;
+                        },5000)
+                    }
+                });
+            }
     },
     mounted() {
         this.fetchApartment();

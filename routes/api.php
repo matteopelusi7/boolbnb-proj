@@ -1,5 +1,6 @@
 <?php
 
+use App\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,5 +27,6 @@ Route::namespace('Api')->group(function () {
     Route::resource('apartment', 'ApartmentController')->only([
         'index', 'show'
     ]);
-    
+    Route::post('messages', 'MessageController@store');
+
 });

@@ -2000,6 +2000,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2010,6 +2030,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       apartment: [],
       loading: false,
+      success: null,
       vote: [{
         id: 1,
         rec: '4.88'
@@ -2025,7 +2046,11 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         id: 5,
         rec: '4.20'
-      }]
+      }],
+      form: {
+        email: "",
+        text: ""
+      }
     };
   },
   methods: {
@@ -2045,6 +2070,25 @@ __webpack_require__.r(__webpack_exports__);
     },
     random: function random() {
       return Math.floor(Math.random() * 5);
+    },
+    sendMessage: function sendMessage() {
+      var _this2 = this;
+
+      this.success = false;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/api/messages", {
+        'apartment_id': this.apartment.id,
+        'email': this.form.email,
+        'text': this.form.text
+      }).then(function (response) {
+        if (response.data.success === true) {
+          _this2.success = true;
+          _this2.form.email = '';
+          _this2.form.text = '';
+          setTimeout(function () {
+            _this2.success = null;
+          }, 5000);
+        }
+      });
     }
   },
   mounted: function mounted() {
@@ -3776,6 +3820,105 @@ var render = function () {
                   0
                 ),
               ]),
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "form",
+                {
+                  attrs: { id: "message-form" },
+                  on: {
+                    submit: function ($event) {
+                      $event.preventDefault()
+                      return _vm.sendMessage.apply(null, arguments)
+                    },
+                  },
+                },
+                [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { staticClass: "required-field" }, [
+                      _vm._v("Name"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.text,
+                          expression: "form.text",
+                        },
+                      ],
+                      staticClass: "form-control my_form",
+                      attrs: {
+                        type: "text",
+                        id: "text",
+                        placeholder: "Name",
+                        required: "",
+                      },
+                      domProps: { value: _vm.form.text },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "text", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { staticClass: "required-field" }, [
+                      _vm._v("Email address"),
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.form.email,
+                          expression: "form.email",
+                        },
+                      ],
+                      staticClass: "form-control my_form",
+                      attrs: {
+                        type: "email",
+                        id: "email",
+                        placeholder: "Name@example.com",
+                        required: "",
+                      },
+                      domProps: { value: _vm.form.email },
+                      on: {
+                        input: function ($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.form, "email", $event.target.value)
+                        },
+                      },
+                    }),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    { staticClass: "btn btn-dark", attrs: { type: "submit" } },
+                    [
+                      _vm.success == null || _vm.success == true
+                        ? _c("span", [_vm._v("Send")])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.success == false
+                        ? _c("div", {
+                            staticClass: "spinner-border",
+                            attrs: { role: "status" },
+                          })
+                        : _vm._e(),
+                    ]
+                  ),
+                ]
+              ),
             ]),
           ])
         : _c("LoadingWheel"),
