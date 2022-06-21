@@ -27,6 +27,10 @@ class Apartment extends Model
         return $this->belongsToMany('App\Add')->withPivot('add_id', 'apartment_id');
     }
 
+    public function messages(){
+        return $this->hasMany('App\Message');
+    }
+
     public static function getUniqueSlug($title) {
         $slug = Str::slug($title);
         $slug_base = $slug;
