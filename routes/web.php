@@ -25,6 +25,7 @@ Route::middleware('auth')
     ->group(function() {
         Route::resource('dashboard', 'UserController');
         Route::resource('apartments', 'ApartmentController');
+        Route::resource('messages', 'MessageController');
 });
 
 Route::fallback(function () {

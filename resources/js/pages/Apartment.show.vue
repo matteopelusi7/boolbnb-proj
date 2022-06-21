@@ -95,23 +95,23 @@ export default {
             return Math.floor(Math.random()*5);
         },
         sendMessage() {
-                this.success = false
-                axios.post(`/api/messages`, {
-                    'apartment_id': this.apartment.id,
-                    'email': this.form.email,
-                    'text': this.form.text
-                })
-                .then(response => {
-                    if(response.data.success === true){
-                        this.success = true
-                        this.form.email = ''
-                        this.form.text = ''
-                        setTimeout(() => {
-                            this.success = null;
-                        },5000)
-                    }
-                });
-            }
+            this.success = false
+            axios.post(`/api/messages`, {
+                'apartment_id': this.apartment.id,
+                'email': this.form.email,
+                'text': this.form.text
+            })
+            .then(response => {
+                if(response.data.success === true){
+                    this.success = true
+                    this.form.email = ''
+                    this.form.text = ''
+                    setTimeout(() => {
+                        this.success = null;
+                    },5000)
+                }
+            });
+        }
     },
     mounted() {
         this.fetchApartment();

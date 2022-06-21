@@ -17,7 +17,7 @@ class MessageSeeder extends Seeder
         $apartments = Apartment::all();
         $apartmentsId = $apartments->pluck('id')->all();
 
-        for ($i=0; $i < 100; $i++) {
+        for ($i=0; $i < 20; $i++) {
 
             $new_message = new Message();
 

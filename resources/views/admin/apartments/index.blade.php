@@ -8,6 +8,7 @@
     <div>
         <a class="btn btn-primary" href="{{route('admin.apartments.create')}}">Aggiungi appartamento</a>
         <a class="btn btn-primary" href="{{route('admin.dashboard.index')}}">Torna alla dashboard</a>
+        <a class="btn btn-primary" href="{{ route('admin.messages.index') }}">Messaggi</a>
     </div>
 
     {{-- tabella appartmenti  --}}
