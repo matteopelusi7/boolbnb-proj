@@ -26,6 +26,7 @@ Route::middleware('auth')
         Route::resource('dashboard', 'UserController');
         Route::resource('apartments', 'ApartmentController');
         Route::resource('messages', 'MessageController');
+        Route::resource('sponsorships', 'SponsorshipController');
 });
 
 Route::fallback(function () {

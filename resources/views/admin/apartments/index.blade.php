@@ -23,6 +23,7 @@
                 <th scope="col">Metri quadri</th>
                 <th scope="col">Servizi Aggiuntivi</th>
                 <th scope="col">Indirizzo</th>
+                <th scope="col">Sponsorizza</th>
                 <th scope="col">Visibilità</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -50,6 +51,9 @@
                         @endforeach
                     </td>
                     <td>{{ $apartment->address }}</td>
+                    <td>
+                        <a class="btn btn-small btn-secondary" href="{{route('admin.sponsorships.index',$apartment)}}">Sponsorizza</a>
+                    </td>
                     @if ($apartment->visible == 0)
                         <td>
                             <span class="rounded-pill bg-warning p-2 text-nowrap d-flex">Non Visibile</span>
