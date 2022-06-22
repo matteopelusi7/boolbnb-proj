@@ -31,6 +31,10 @@ class Apartment extends Model
         return $this->hasMany('App\Message');
     }
 
+    public function sponsorships(){
+        return $this->belongsToMany('App\Sponsorship');
+    }
+
     public static function getUniqueSlug($title) {
         $slug = Str::slug($title);
         $slug_base = $slug;
