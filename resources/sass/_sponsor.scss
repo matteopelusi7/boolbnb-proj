@@ -1,0 +1,61 @@
+.container {
+    
+    .row-title {
+      text-transform: uppercase;
+      font-size: 25px;
+      padding-bottom: 35px;
+    }
+
+    .box-ticket {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        
+        .ticket-header {
+            position: relative;
+            background-color: #f9f9f9;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 18px;
+            height: 100px;
+            padding: 18px 10px;
+        }
+
+      .ticket-main {
+        background-color: #f9f9f9;
+        text-align: center;
+        font-size: 15px;
+        font-style: italic;
+      }
+
+      .ticket-footer {
+        background-color: #ff385c;
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        font-size: 15px;
+        cursor: pointer;
+
+            a {
+                text-decoration: none;
+                color: currentColor;
+            }
+            
+      }
+
+      .featured {
+        transform: rotate(45deg);
+        position: absolute;
+        top: 34px;
+        right: -7px;
+        height: 0;
+        color: $white;
+        font-size: 14px;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid #ff385c;
+        border-left: 20px solid transparent;
+      }
+
+    }
+
+  }
