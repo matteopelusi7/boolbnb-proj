@@ -51,9 +51,17 @@
                         @endforeach
                     </td>
                     <td>{{ $apartment->address }}</td>
+                    @if ($apartment->visible == 0)
                     <td>
-                        <a class="btn btn-small btn-secondary" href="{{route('admin.sponsorships.index',$apartment)}}">Sponsorizza</a>
+                        <td>
+                            <span class=" rounded-pill bg-success p-2 text-nowrap">Sponsorizzato</span>
+                        </td>
+                        @else
+                        <td>
+                            <a class="btn btn-small btn-secondary" href="{{route('admin.sponsorships.index',$apartment)}}">Sponsorizza</a>
+                        </td>
                     </td>
+                    @endif
                     @if ($apartment->visible == 0)
                         <td>
                             <span class="rounded-pill bg-warning p-2 text-nowrap d-flex">Non Visibile</span>
