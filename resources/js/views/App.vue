@@ -16,7 +16,7 @@
                 </ul>
 
                 
-          <form class="form-inline col-4 position-relative">
+        <form class="form-inline col-4 position-relative">
             <button class="btn-nav-searchGv my-2 my-sm-0 d-none d-md-block" type="submit">
               <lord-icon
                 src="https://cdn.lordicon.com/pvbutfdk.json"
@@ -63,7 +63,7 @@
               
               
           </div>
-          </form>
+        </form>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav align-items-end ml-auto">
