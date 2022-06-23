@@ -2153,6 +2153,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2162,6 +2169,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       users: [],
+      lastPage: 0,
+      currentPage: 1,
       loading: false,
       vote: [{
         id: 1,
@@ -2185,10 +2194,19 @@ __webpack_require__.r(__webpack_exports__);
     fetchUsers: function fetchUsers() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/home").then(function (res) {
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/home", {
+        params: {
+          page: page
+        }
+      }).then(function (res) {
         var users = res.data.users;
-        _this.users = users;
-        console.log(_this.users);
+        var data = users.data,
+            last_page = users.last_page,
+            current_page = users.current_page;
+        _this.users = data;
+        _this.currentPage = current_page;
+        _this.lastPage = last_page;
         _this.loading = true;
       })["catch"](function (err) {
         console.warn(err);
@@ -2304,6 +2322,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2315,7 +2347,8 @@ __webpack_require__.r(__webpack_exports__);
       addFilter: [],
       users: [],
       adds: [],
-      filteredUsers: [],
+      lastPage: 0,
+      currentPage: 1,
       userAdds: [],
       loading: false
     };
@@ -2324,9 +2357,19 @@ __webpack_require__.r(__webpack_exports__);
     fetchUsers: function fetchUsers() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/home").then(function (res) {
+      var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/user", {
+        params: {
+          page: page
+        }
+      }).then(function (res) {
         var users = res.data.users;
-        _this.users = users;
+        var data = users.data,
+            last_page = users.last_page,
+            current_page = users.current_page;
+        _this.users = data;
+        _this.currentPage = current_page;
+        _this.lastPage = last_page;
         console.log(_this.users);
         _this.loading = true;
       })["catch"](function (err) {
@@ -2335,44 +2378,53 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push("/404");
       });
     },
-    fetchAdds: function fetchAdds() {
+    fetchFiltered: function fetchFiltered(add) {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/add").then(function (res) {
-        var adds = res.data.adds;
-        _this2.adds = adds;
-        console.log(_this2.adds);
+      var page = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/user", {
+        params: {
+          add: add,
+          page: page
+        }
+      }).then(function (res) {
+        var users = res.data.users;
+        var data = users.data,
+            last_page = users.last_page,
+            current_page = users.current_page;
+        _this2.users = data;
+        _this2.currentPage = current_page;
+        _this2.lastPage = last_page;
+        console.log(_this2.users);
       })["catch"](function (err) {
         console.warn(err);
 
         _this2.$router.push("/404");
       });
     },
-    checkAddsContain: function checkAddsContain(user) {
-      var userAdds = user.adds.map(function (t) {
-        return t.name;
-      });
-      return this.addFilter.every(function (element) {
-        return userAdds.includes(element);
+    fetchAdds: function fetchAdds() {
+      var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/add").then(function (res) {
+        var adds = res.data.adds;
+        _this3.adds = adds;
+      })["catch"](function (err) {
+        console.warn(err);
+
+        _this3.$router.push("/404");
       });
     },
-    checkAdds: function checkAdds() {
-      console.log(this.addFilter);
+    check: function check() {
+      if (this.addFilter !== "") {
+        this.fetchFiltered(this.addFilter, 1);
+      } else {
+        this.fetchUsers();
+      }
     }
   },
   created: function created() {
     this.fetchAdds();
     this.fetchUsers();
-  },
-  computed: {
-    filteredApartments: function filteredApartments() {
-      if (!this.addFilter.length) {
-        return this.filteredUsers = this.users;
-      } else {
-        this.filteredUsers = this.users.filter(this.checkAddsContain);
-        return this.filteredUsers;
-      }
-    }
   }
 });
 
@@ -2706,7 +2758,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-4f548cf0] {\n  list-style: none;\n}\n.border-rd[data-v-4f548cf0] {\n  border-radius: 12px;\n}\n.list-wrap[data-v-4f548cf0] {\n  gap: 20px 0px;\n}\n.card[data-v-4f548cf0] {\n  border: none;\n}\n.gap-bg[data-v-4f548cf0] {\n  cursor: pointer;\n}\n.font-title[data-v-4f548cf0] {\n  font-size: 35px;\n  font-weight: 800;\n}\n.card-footer[data-v-4f548cf0] {\n  gap: 10px;\n}\n.title-ap[data-v-4f548cf0] {\n  font-weight: 700;\n  font-size: 15px;\n}\n.rec[data-v-4f548cf0] {\n  font-weight: 600;\n}\n.address-ap[data-v-4f548cf0], .sqm-ap[data-v-4f548cf0] {\n  color: #797187;\n}", ""]);
+exports.push([module.i, "a[data-v-4f548cf0] {\n  text-decoration: none;\n  color: currentColor;\n}\n.filter[data-v-4f548cf0] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-4f548cf0] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-4f548cf0] {\n  font-weight: 800;\n  font-size: 40px;\n}\n.pagination[data-v-4f548cf0] {\n  gap: 20px;\n}\n.pagination-button[data-v-4f548cf0] {\n  padding: 10px 15px;\n}\n.bg-gl1[data-v-4f548cf0] {\n  background-color: #ffc244;\n}\n.bg-gl2[data-v-4f548cf0] {\n  background-color: #faeac4;\n}\nul li input[type=checkbox][data-v-4f548cf0] {\n  display: none;\n}\n.selected[data-v-4f548cf0] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n  border: 1px solid transparent;\n}\ninput[type=checkbox]:checked ~ label[data-v-4f548cf0] {\n  padding: 10px 30px;\n  background-color: #fcc244;\n  box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);\n}\n.counter[data-v-4f548cf0] {\n  background-color: #12a199;\n  border-radius: 100%;\n  padding: 10px 10px;\n  height: 26px;\n  width: 26px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -4344,6 +4396,43 @@ var render = function () {
                   }),
                   1
                 ),
+                _vm._v(" "),
+                _c("div", { staticClass: "container py-4" }, [
+                  _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "pagination flex justify-center gap-4 item-center",
+                    },
+                    _vm._l(_vm.lastPage, function (n) {
+                      return _c(
+                        "li",
+                        {
+                          key: n,
+                          class: [
+                            _vm.currentPage === n
+                              ? "bg-orange-400"
+                              : "bg-white-400",
+                            "dot bg-white/30 rounded-full cursor-pointer h-10 w-10 flex items-center justify-center text-sm",
+                          ],
+                          on: {
+                            click: function ($event) {
+                              return _vm.fetchUsers(n)
+                            },
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(n) +
+                              "\n                        "
+                          ),
+                        ]
+                      )
+                    }),
+                    0
+                  ),
+                ]),
               ]),
               _vm._v(" "),
               _c(
@@ -4416,184 +4505,325 @@ var render = function () {
                 _vm._v("Seleziona una o più servizi aggiuntivi disponibili:"),
               ]),
               _vm._v(" "),
-              _c(
-                "form",
-                {
-                  staticClass:
-                    "form-inline w-100 d-flex justify-content-around",
-                },
-                [
-                  _c("div", { staticClass: "form-group row" }, [
-                    _c("label", {
-                      staticClass: "col-form-label",
-                      attrs: { for: "category" },
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "form",
-                      {
-                        staticClass: "container my-bg-categories",
-                        on: {
-                          submit: function ($event) {
-                            $event.preventDefault()
-                            return _vm.fetchApartment.apply(null, arguments)
+              _c("div", { staticClass: "col-12 col-md-2" }, [
+                _c(
+                  "form",
+                  {
+                    staticClass:
+                      "form-inline w-100 d-flex justify-content-around",
+                  },
+                  [
+                    _c("div", { staticClass: "form-group row" }, [
+                      _c("label", {
+                        staticClass: "col-form-label",
+                        attrs: { for: "add" },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "form",
+                        {
+                          staticClass: "container my-bg-categories",
+                          on: {
+                            submit: function ($event) {
+                              $event.preventDefault()
+                              return _vm.fetchUsers.apply(null, arguments)
+                            },
                           },
                         },
-                      },
-                      [
+                        [
+                          _vm._m(0),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "filter-list filter py-3 d-flex flex-row flex-md-column flex-wrap justify-content-center p-4",
+                            },
+                            _vm._l(_vm.adds, function (add) {
+                              return _c("li", { key: add.id }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.addFilter,
+                                      expression: "addFilter",
+                                    },
+                                  ],
+                                  staticClass: "mx-1",
+                                  attrs: {
+                                    type: "checkbox",
+                                    id: add.id,
+                                    name: add.id,
+                                  },
+                                  domProps: {
+                                    value: add.id,
+                                    checked: Array.isArray(_vm.addFilter)
+                                      ? _vm._i(_vm.addFilter, add.id) > -1
+                                      : _vm.addFilter,
+                                  },
+                                  on: {
+                                    change: [
+                                      function ($event) {
+                                        var $$a = _vm.addFilter,
+                                          $$el = $event.target,
+                                          $$c = $$el.checked ? true : false
+                                        if (Array.isArray($$a)) {
+                                          var $$v = add.id,
+                                            $$i = _vm._i($$a, $$v)
+                                          if ($$el.checked) {
+                                            $$i < 0 &&
+                                              (_vm.addFilter = $$a.concat([
+                                                $$v,
+                                              ]))
+                                          } else {
+                                            $$i > -1 &&
+                                              (_vm.addFilter = $$a
+                                                .slice(0, $$i)
+                                                .concat($$a.slice($$i + 1)))
+                                          }
+                                        } else {
+                                          _vm.addFilter = $$c
+                                        }
+                                      },
+                                      function ($event) {
+                                        return _vm.check()
+                                      },
+                                    ],
+                                  },
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass:
+                                      "d-flex justify-content-between pill-color rounded-pill selected ",
+                                    attrs: { for: add.id },
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      {
+                                        staticClass:
+                                          "text-center text-md-left font-weight-bold",
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                                            " +
+                                            _vm._s(add.name) +
+                                            "\n                                        "
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("span", { staticClass: "counter" }, [
+                                      _vm._v(
+                                        "\n                                            " +
+                                          _vm._s(add.apartments.length) +
+                                          "\n                                        "
+                                      ),
+                                    ]),
+                                  ]
+                                ),
+                              ])
+                            }),
+                            0
+                          ),
+                        ]
+                      ),
+                    ]),
+                  ]
+                ),
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-12 col-md-10 restaurant-wrapper" },
+                [
+                  _c("div", { staticClass: "restaurants-bg py-4" }, [
+                    _c("div", { staticClass: "container" }, [
+                      _c("div", [
                         _c(
                           "ul",
-                          { staticClass: "filter" },
-                          _vm._l(_vm.adds, function (add) {
-                            return _c("li", { key: add.id }, [
-                              _c("input", {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.addFilter,
-                                    expression: "addFilter",
-                                  },
-                                ],
-                                staticClass: "mx-1",
+                          {
+                            staticClass:
+                              " d-flex row flex-wrap justify-content-center ml-2 list-wrapper pt-3",
+                          },
+                          _vm._l(_vm.users, function (user) {
+                            return _c(
+                              "router-link",
+                              {
+                                key: user.id,
+                                class:
+                                  _vm.currentPage == 4 && _vm.users.length < 3
+                                    ? "cursor-pointer list-item col-12 col-sm-12 col-md-12 col-lg-6 col-xs-12"
+                                    : "cursor-pointer list-item col-12 col-md-12 col-lg-6",
                                 attrs: {
-                                  type: "checkbox",
-                                  id: add.name,
-                                  name: add.name,
-                                },
-                                domProps: {
-                                  value: add.name,
-                                  checked: Array.isArray(_vm.addFilter)
-                                    ? _vm._i(_vm.addFilter, add.name) > -1
-                                    : _vm.addFilter,
-                                },
-                                on: {
-                                  click: _vm.checkAdds,
-                                  change: function ($event) {
-                                    var $$a = _vm.addFilter,
-                                      $$el = $event.target,
-                                      $$c = $$el.checked ? true : false
-                                    if (Array.isArray($$a)) {
-                                      var $$v = add.name,
-                                        $$i = _vm._i($$a, $$v)
-                                      if ($$el.checked) {
-                                        $$i < 0 &&
-                                          (_vm.addFilter = $$a.concat([$$v]))
-                                      } else {
-                                        $$i > -1 &&
-                                          (_vm.addFilter = $$a
-                                            .slice(0, $$i)
-                                            .concat($$a.slice($$i + 1)))
-                                      }
-                                    } else {
-                                      _vm.addFilter = $$c
-                                    }
+                                  tag: "li",
+                                  to: {
+                                    name: "apartment.show",
+                                    params: { slug: user.slug },
                                   },
                                 },
-                              }),
-                              _vm._v(" "),
-                              _c("label", { attrs: { for: add.name } }, [
-                                _vm._v(
-                                  "\n                                    " +
-                                    _vm._s(add.name) +
-                                    "\n                                "
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "card card-t rounded-mid overflow-hidden",
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "overlay overflow-hidden",
+                                      },
+                                      [
+                                        _c("img", {
+                                          staticClass: "card-img-top img-card",
+                                          attrs: { src: user.cover, alt: "" },
+                                        }),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card-title d-flex align-items-center justify-content-center flex-column text-white",
+                                      },
+                                      [
+                                        _c(
+                                          "h5",
+                                          {
+                                            staticClass:
+                                              "name-business text-center text-capitalize",
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(user.title) +
+                                                "\n                                            "
+                                            ),
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "d-flex flex-row tipologies-card flex-wrap justify-content-center align-items-center mb-4",
+                                          },
+                                          _vm._l(user.adds, function (el) {
+                                            return _c(
+                                              "p",
+                                              {
+                                                key: el.id,
+                                                staticClass:
+                                                  "tipologies-name badge badge-dark",
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                                                " +
+                                                    _vm._s(el.name) +
+                                                    "\n                                                "
+                                                ),
+                                              ]
+                                            )
+                                          }),
+                                          0
+                                        ),
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "bg-white card-foot d-flex justify-content-between align-items-center mt-2 px-2",
+                                      },
+                                      [
+                                        _c("div", {
+                                          staticClass: "d-flex flex-wrap",
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          {
+                                            staticClass:
+                                              "d-flex flex-wrap align-items-center",
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "d-flex mr-2" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass:
+                                                      "bg-gl font-gl text-uppercase",
+                                                  },
+                                                  [_vm._v("Gratis")]
+                                                ),
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c("div", {
+                                              staticClass: "d-flex temp-cl",
+                                            }),
+                                          ]
+                                        ),
+                                      ]
+                                    ),
+                                  ]
                                 ),
-                              ]),
-                            ])
+                              ]
+                            )
                           }),
-                          0
+                          1
                         ),
-                      ]
-                    ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "container pt-5" }, [
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "pagination flex justify-content-center align-items-center gap-4 items-center",
+                            },
+                            _vm._l(_vm.lastPage, function (n) {
+                              return _c(
+                                "li",
+                                {
+                                  key: n,
+                                  staticClass:
+                                    "d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button",
+                                  class:
+                                    _vm.currentPage === n ? "bg-gl1" : "bg-gl2",
+                                  on: {
+                                    click: function ($event) {
+                                      return _vm.fetchFiltered(_vm.addFilter, n)
+                                    },
+                                  },
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        " +
+                                      _vm._s(n) +
+                                      "\n                                    "
+                                  ),
+                                ]
+                              )
+                            }),
+                            0
+                          ),
+                        ]),
+                      ]),
+                    ]),
                   ]),
                 ]
               ),
-              _vm._v(" "),
-              _c("div", [
-                _vm.filteredApartments.length == 0
-                  ? _c("div", [_vm._m(0)])
-                  : _c(
-                      "ul",
-                      {
-                        staticClass:
-                          "d-flex flex-wrap justify-content-center gap-card",
-                      },
-                      _vm._l(_vm.filteredUsers, function (user) {
-                        return _c(
-                          "router-link",
-                          {
-                            key: user.id,
-                            staticClass: "cursor-pointer",
-                            attrs: {
-                              tag: "li",
-                              to: {
-                                name: "apartment.show",
-                                params: { slug: user.slug },
-                              },
-                            },
-                          },
-                          [
-                            _c("div", { staticClass: "card" }, [
-                              user.cover
-                                ? _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: { src: user.cover, alt: "" },
-                                  })
-                                : _c("img", {
-                                    staticStyle: {
-                                      width: "200px",
-                                      height: "100px",
-                                    },
-                                    attrs: {
-                                      src: "https://picsum.photos/300/150",
-                                      alt: "",
-                                    },
-                                  }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "card-body" }, [
-                                _c(
-                                  "h5",
-                                  {
-                                    staticClass:
-                                      "card-title name-business text-left",
-                                  },
-                                  [
-                                    _vm._v(
-                                      "\n                                    " +
-                                        _vm._s(user.title) +
-                                        "\n                                "
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "p",
-                                  { staticClass: "card-text address-name" },
-                                  [
-                                    _vm._v(
-                                      "\n                                    " +
-                                        _vm._s(user.address) +
-                                        "\n                                "
-                                    ),
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass: "btn bg-gl",
-                                    attrs: { href: "#" },
-                                  },
-                                  [_vm._v("Vedi Menù")]
-                                ),
-                              ]),
-                            ]),
-                          ]
-                        )
-                      }),
-                      1
-                    ),
-              ]),
             ]),
           ])
         : _c("LoadingWheel"),
@@ -4606,7 +4836,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("h2", [_vm._v("Nessun appartamento trovato")])])
+    return _c("p", { staticClass: "text-center text-md-left px-5" }, [
+      _c("strong", [_vm._v("Filtri più usati")]),
+    ])
   },
 ]
 render._withStripped = true

@@ -19,10 +19,17 @@
                             </div>
                         </router-link>
                     </ul>
+                    <div class="container py-4">
+                        <ul class="pagination flex justify-center gap-4 item-center">
+                            <li @click="fetchUsers(n)" :class="[ currentPage === n ? 'bg-orange-400' : 'bg-white-400', 'dot bg-white/30 rounded-full cursor-pointer h-10 w-10 flex items-center justify-center text-sm']" v-for="n in lastPage" :key="n">
+                                {{ n }}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
                     <h2 class="text-center pb-5 font-title">Pagina per filtrare appartamenti</h2>
-                    <router-link
+                     <router-link
                         tag="a"
                         :to="{
                             name: 'filter-page',
@@ -52,6 +59,8 @@ export default {
     data() {
         return {
             users: [],
+            lastPage: 0,
+            currentPage: 1,
             loading: false,
             vote: [
                 { id: 1, rec: '4.88'},
@@ -63,13 +72,19 @@ export default {
         };
     },
     methods: {
-        fetchUsers() {
+        fetchUsers(page = 1) {
             axios
-                .get("/api/home")
+                .get("/api/home", {
+                    params: {
+                    page
+                }
+                })
                 .then((res) => {
-                    const { users } = res.data;
-                    this.users = users;
-                    console.log(this.users)
+                    const { users } = res.data
+                    const {data, last_page, current_page} = users
+                    this.users = data
+                    this.currentPage = current_page
+                    this.lastPage = last_page
                     this.loading = true;
                 })
                 .catch((err) => {
