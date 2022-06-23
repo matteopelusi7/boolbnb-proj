@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Apartment;
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = Apartment::orderBy('title', 'asc')->paginate(6);
+        $users = Apartment::orderBy('title', 'asc')->get()->all();
 
         return response()->json([
             'users' => $users,
@@ -50,23 +49,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $apartment = User::where('slug', $slug)->first();
-
-        if ($apartment) {
-            // Nel caso trovera il post c'è la mostrerà
-            return response()->json([
-                'apartment' => $apartment,
-                'success' => true
-            ]);
-        } else {
-            // Nel caso non lo troverà il post ci mostrerà la pagina 404 di errore
-            return response()->json([
-                'message' => 'appartamento non trovato',
-                'success' => false
-            ], 404);
-        }
+        //
     }
 
     /**

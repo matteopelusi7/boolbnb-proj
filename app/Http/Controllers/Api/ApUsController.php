@@ -4,19 +4,30 @@ namespace App\Http\Controllers\Api;
 
 use App\Apartment;
 use App\Http\Controllers\Controller;
-use App\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class ApUsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = Apartment::orderBy('title', 'asc')->paginate(6);
+        $params = $request->query('add');
+
+        if ($params) {
+            $users = Apartment::with('adds')->whereHas('adds', function($q) use ($params) {
+                $q->whereIn('add_apartment.add_id', $params);
+            })->paginate(6);
+            
+            return response()->json([
+                'users' => $users,
+            ]);
+        } 
+
+        $users = Apartment::with('adds')->paginate(6);
 
         return response()->json([
             'users' => $users,
@@ -50,23 +61,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $apartment = User::where('slug', $slug)->first();
-
-        if ($apartment) {
-            // Nel caso trovera il post c'è la mostrerà
-            return response()->json([
-                'apartment' => $apartment,
-                'success' => true
-            ]);
-        } else {
-            // Nel caso non lo troverà il post ci mostrerà la pagina 404 di errore
-            return response()->json([
-                'message' => 'appartamento non trovato',
-                'success' => false
-            ], 404);
-        }
+        //
     }
 
     /**
