@@ -24,6 +24,9 @@ Route::namespace('Api')->group(function () {
     Route::resource('home', 'UserController')->only([
         'index', 'show'
     ]);
+    Route::resource('add', 'AddsController')->only([
+        'index', 'show'
+    ]);
     Route::resource('apartment', 'ApartmentController')->only([
         'index', 'show'
     ]);

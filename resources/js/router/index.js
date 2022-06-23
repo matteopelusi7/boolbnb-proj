@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 import NotFound from "../pages/404.vue";
 import Apartments from "../pages/Apartments.index.vue";
 import Apartment from "../pages/Apartment.show.vue";
+import Filter from "../pages/FilterPage.vue";
 
 const routes = [
     {
@@ -20,6 +21,14 @@ const routes = [
         path: "/apartment/:slug",
         name: "apartment.show",
         component: Apartment,
+        meta: {
+            title: "Case vacanze e appartamenti in affitto - BoolBnB",
+        },
+    },
+    {
+        path: "/filter",
+        name: "filter-page",
+        component: Filter,
         meta: {
             title: "Case vacanze e appartamenti in affitto - BoolBnB",
         },

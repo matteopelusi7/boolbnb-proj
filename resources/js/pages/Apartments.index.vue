@@ -20,6 +20,18 @@
                         </router-link>
                     </ul>
                 </div>
+                <div>
+                    <h2 class="text-center pb-5 font-title">Pagina per filtrare appartamenti</h2>
+                    <router-link
+                        tag="a"
+                        :to="{
+                            name: 'filter-page',
+                        }"
+                        class="cursor-pointer"
+                    >
+                    Vai alla pagina
+                    </router-link>
+                </div>
             </div>
         </div>
 
