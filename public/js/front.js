@@ -2360,7 +2360,97 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      users: [],
+      searchbarFilter: ''
+    };
+  },
+  methods: {
+    fetchApartment: function fetchApartment() {
+      var _this = this;
+
+      axios.get("/api/home").then(function (res) {
+        var users = res.data.users;
+        _this.users = users;
+        console.log(_this.users);
+      })["catch"](function (err) {
+        console.warn(err);
+
+        _this.$router.push("/404");
+      });
+    },
+    closeSearchbar: function closeSearchbar() {
+      this.searchbarFilter = '';
+
+      if (this.$route.path == '/apartment/:slug') {
+        this.$router.go();
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.fetchApartment();
+  },
+  computed: {
+    filteredApartment: function filteredApartment() {
+      var _this2 = this;
+
+      return this.users.filter(function (el) {
+        if (el.title) {
+          return el.title.toLowerCase().includes(_this2.searchbarFilter.toLowerCase());
+        }
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2433,7 +2523,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".bg-color[data-v-91ac6b5c] {\n  background-color: #f7f7f7;\n}\nfooter ul[data-v-91ac6b5c] {\n  list-style: none;\n  padding: 0;\n  gap: 15px;\n}\nfooter a[data-v-91ac6b5c] {\n  text-decoration: none;\n  color: currentColor;\n}\nfooter li[data-v-91ac6b5c] {\n  line-height: 40px;\n}\nfooter ul li[data-v-91ac6b5c]:first-child {\n  font-weight: 700;\n}\nfooter .row-line[data-v-91ac6b5c]::after {\n  content: \"\";\n  display: block;\n  background-color: lightgray;\n  width: 100%;\n  height: 1px;\n}\nfooter a[data-v-91ac6b5c]:hover {\n  color: currentColor;\n}\n.list-item[data-v-91ac6b5c] {\n  gap: 20px;\n}\n.it[data-v-91ac6b5c] {\n  font-weight: 600;\n}\n.btn-nav-register[data-v-91ac6b5c] {\n  background-color: rgba(255, 255, 255, 0.2);\n  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);\n  border-radius: 70% 30% 76% 24%/44% 73% 27% 56%;\n}\n.btn-nav-register[data-v-91ac6b5c]:hover {\n  background-color: #fc1b45;\n  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);\n}\n.btn-nav-menu[data-v-91ac6b5c] {\n  background-color: #ffd47c;\n  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);\n  border-radius: 27% 43% 38% 19%/34% 57% 21% 78%;\n}\n.btn-nav-menu .btn-nav-item[data-v-91ac6b5c]:hover {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n.btn-nav-searchGv[data-v-91ac6b5c] {\n  color: black;\n  background-color: transparent;\n  border: none;\n  position: absolute;\n  left: 20px;\n  z-index: 1;\n}\n.btn-nav-searchGv[data-v-91ac6b5c]:focus-visible {\n  outline: none;\n  box-shadow: 0px 0px 10px black;\n}\n.bg-it[data-v-91ac6b5c] {\n  background-color: #ff385c;\n}", ""]);
+exports.push([module.i, ".dropdown-wrapper[data-v-91ac6b5c] {\n  background-color: transparent;\n  border: none;\n}\na[data-v-91ac6b5c] {\n  text-decoration: none;\n  color: currentColor;\n}\n.filtered-apartment[data-v-91ac6b5c] {\n  position: absolute;\n  top: 120%;\n  left: 50%;\n  transform: translate(-50%, 0);\n  width: 150%;\n  max-height: 800px;\n  overflow: auto;\n  background-color: lightgrey;\n  border: 1px solid rgba(255, 255, 255, 0.2);\n  display: none;\n  z-index: 999;\n  box-shadow: 5px 5px 9px 1px rgba(0, 0, 0, 0.63);\n}\n.filtered-apartment.active[data-v-91ac6b5c] {\n  display: block;\n}\n.apartment-logo[data-v-91ac6b5c] {\n  border: 3px solid black;\n  overflow: hidden;\n  margin: 0;\n  border-radius: 5px;\n  min-width: 95px;\n  min-height: 90px;\n}\n.page-link[data-v-91ac6b5c] {\n  padding: 0;\n  margin: 0;\n}\n.single-collection[data-v-91ac6b5c] {\n  display: flex;\n  gap: 8px;\n  align-items: center;\n  text-align: left;\n  font-size: 1rem;\n  padding: 5px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.collection-name[data-v-91ac6b5c] {\n  display: block;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.single-collection[data-v-91ac6b5c]:nth-child(odd) {\n  background-color: white;\n}\n.single-collection[data-v-91ac6b5c]:nth-child(even) {\n  background-color: #ff385c;\n  color: white;\n}\n.single-collection[data-v-91ac6b5c]:hover {\n  background-color: #fc1b45;\n  color: white;\n}\n.no-result[data-v-91ac6b5c] {\n  min-height: 300px;\n  padding: 0 20px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: white;\n  font-size: 1.5rem;\n}\n.bg-color[data-v-91ac6b5c] {\n  background-color: #f7f7f7;\n}\nfooter ul[data-v-91ac6b5c] {\n  list-style: none;\n  padding: 0;\n  gap: 15px;\n}\nfooter a[data-v-91ac6b5c] {\n  text-decoration: none;\n  color: currentColor;\n}\nfooter li[data-v-91ac6b5c] {\n  line-height: 40px;\n}\nfooter ul li[data-v-91ac6b5c]:first-child {\n  font-weight: 700;\n}\nfooter .row-line[data-v-91ac6b5c]::after {\n  content: \"\";\n  display: block;\n  background-color: lightgray;\n  width: 100%;\n  height: 1px;\n}\nfooter a[data-v-91ac6b5c]:hover {\n  color: currentColor;\n}\n.list-item[data-v-91ac6b5c] {\n  gap: 20px;\n}\n.it[data-v-91ac6b5c] {\n  font-weight: 600;\n}\n.btn-nav-register[data-v-91ac6b5c] {\n  background-color: rgba(255, 255, 255, 0.2);\n  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);\n  border-radius: 70% 30% 76% 24%/44% 73% 27% 56%;\n}\n.btn-nav-register[data-v-91ac6b5c]:hover {\n  background-color: #fc1b45;\n  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);\n}\n.btn-nav-menu[data-v-91ac6b5c] {\n  background-color: #ffd47c;\n  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);\n  border-radius: 27% 43% 38% 19%/34% 57% 21% 78%;\n}\n.btn-nav-menu .btn-nav-item[data-v-91ac6b5c]:hover {\n  background-color: rgba(255, 255, 255, 0.4);\n}\n.btn-nav-searchGv[data-v-91ac6b5c] {\n  color: black;\n  background-color: transparent;\n  border: none;\n  position: absolute;\n  left: 20px;\n  z-index: 1;\n}\n.btn-nav-searchGv[data-v-91ac6b5c]:focus-visible {\n  outline: none;\n  box-shadow: 0px 0px 10px black;\n}\n.bg-it[data-v-91ac6b5c] {\n  background-color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -4053,50 +4143,16 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("main", { staticClass: "py-5" }, [_c("router-view")], 1),
-    _vm._v(" "),
-    _vm._m(1),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
+    _c(
       "nav",
       {
         staticClass: "navbar navbar-expand-md navbar-light bg-white shadow-sm",
       },
       [
         _c("div", { staticClass: "container py-2" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
-            _c("img", {
-              attrs: {
-                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/512px-Airbnb_Logo_B%C3%A9lo.svg.png",
-                height: "40px",
-                alt: "",
-              },
-            }),
-          ]),
+          _vm._m(0),
           _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "navbar-toggler",
-              attrs: {
-                type: "button",
-                "data-toggle": "collapse",
-                "data-target": "#navbarSupportedContent",
-                "aria-controls": "navbarSupportedContent",
-                "aria-expanded": "false",
-                "aria-label": "",
-              },
-            },
-            [_c("span", { staticClass: "navbar-toggler-icon" })]
-          ),
+          _vm._m(1),
           _vm._v(" "),
           _c(
             "div",
@@ -4107,60 +4163,221 @@ var staticRenderFns = [
             [
               _c("ul", { staticClass: "navbar-nav mr-auto" }),
               _vm._v(" "),
-              _c("input", {
-                staticClass:
-                  "form-control  font-size  col-4   text-center  rounded-pill  mr-sm-2  pl-5 d-none d-md-block",
-                attrs: {
-                  type: "search",
-                  placeholder: "Cerca Appartamenti...",
-                  "aria-label": "Search",
-                },
-              }),
+              _c(
+                "form",
+                { staticClass: "form-inline col-4 position-relative" },
+                [
+                  _c(
+                    "button",
+                    {
+                      staticClass:
+                        "btn-nav-searchGv my-2 my-sm-0 d-none d-md-block",
+                      attrs: { type: "submit" },
+                    },
+                    [
+                      _c("lord-icon", {
+                        staticStyle: { width: "25px", height: "25px" },
+                        attrs: {
+                          src: "https://cdn.lordicon.com/pvbutfdk.json",
+                          trigger: "loop-on-hover",
+                        },
+                      }),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.searchbarFilter,
+                        expression: "searchbarFilter",
+                      },
+                    ],
+                    staticClass:
+                      "form-control  font-size  col-12   text-center  rounded-pill  mr-sm-2  pl-5 d-none d-md-block",
+                    attrs: {
+                      type: "search",
+                      placeholder: "Cerca Appartamenti...",
+                      "aria-label": "Search",
+                    },
+                    domProps: { value: _vm.searchbarFilter },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.searchbarFilter = $event.target.value
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "filtered-apartment p-0 rounded",
+                      class: _vm.searchbarFilter === "" ? "" : "active",
+                      attrs: { id: "result" },
+                      on: {
+                        click: function ($event) {
+                          return _vm.closeSearchbar()
+                        },
+                      },
+                    },
+                    [
+                      _vm.filteredApartment[0]
+                        ? _vm._l(
+                            _vm.filteredApartment,
+                            function (apartment, i) {
+                              return i < 15
+                                ? _c(
+                                    "router-link",
+                                    {
+                                      key: apartment.id,
+                                      staticClass: "single-collection",
+                                      attrs: {
+                                        to: {
+                                          name: "apartment.show",
+                                          params: { slug: apartment.slug },
+                                        },
+                                      },
+                                    },
+                                    [
+                                      _c(
+                                        "figure",
+                                        {
+                                          staticClass:
+                                            "apartment-logo d-none d-xl-block",
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "collection-logo",
+                                            attrs: {
+                                              src: apartment.cover,
+                                              alt: "",
+                                              width: "90",
+                                              height: "90",
+                                            },
+                                          }),
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "collection" }, [
+                                        _c(
+                                          "span",
+                                          { staticClass: "collection-name" },
+                                          [_vm._v(_vm._s(apartment.title))]
+                                        ),
+                                      ]),
+                                    ]
+                                  )
+                                : _vm._e()
+                            }
+                          )
+                        : [_vm._m(2)],
+                    ],
+                    2
+                  ),
+                ]
+              ),
               _vm._v(" "),
-              _c("ul", { staticClass: "navbar-nav align-items-end ml-auto" }, [
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1 bg-it",
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "nav-link text-center font-weight-bold text-white",
-                        attrs: { href: "/login" },
-                      },
-                      [_vm._v("Accedi\n                    ")]
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1 bg-it",
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass:
-                          "nav-link text-center font-weight-bold text-white",
-                        attrs: { href: "/register" },
-                      },
-                      [_vm._v("Iscriviti")]
-                    ),
-                  ]
-                ),
-              ]),
+              _vm._m(3),
             ]
           ),
         ]),
       ]
+    ),
+    _vm._v(" "),
+    _c("main", { staticClass: "py-5" }, [_c("router-view")], 1),
+    _vm._v(" "),
+    _vm._m(4),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
+      _c("img", {
+        attrs: {
+          src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/512px-Airbnb_Logo_B%C3%A9lo.svg.png",
+          height: "40px",
+          alt: "",
+        },
+      }),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": "",
+        },
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "no-result" }, [
+      _c("h3", [_vm._v("Nessun appartamento trovato")]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("ul", { staticClass: "navbar-nav align-items-end ml-auto" }, [
+      _c(
+        "li",
+        {
+          staticClass:
+            "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1 bg-it",
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link text-center font-weight-bold text-white",
+              attrs: { href: "/login" },
+            },
+            [_vm._v("Accedi\n                    ")]
+          ),
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          staticClass:
+            "nav-item btn-nav-register my-2 mx-md-1 px-2 p-md-1 bg-it",
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link text-center font-weight-bold text-white",
+              attrs: { href: "/register" },
+            },
+            [_vm._v("Iscriviti")]
+          ),
+        ]
+      ),
+    ])
   },
   function () {
     var _vm = this

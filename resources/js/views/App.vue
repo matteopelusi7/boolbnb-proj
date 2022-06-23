@@ -15,8 +15,55 @@
 
                 </ul>
 
-                <input  class="form-control  font-size  col-4   text-center  rounded-pill  mr-sm-2  pl-5 d-none d-md-block"  
-                    type="search"  placeholder="Cerca Appartamenti..."  aria-label="Search"/>
+                
+          <form class="form-inline col-4 position-relative">
+            <button class="btn-nav-searchGv my-2 my-sm-0 d-none d-md-block" type="submit">
+              <lord-icon
+                src="https://cdn.lordicon.com/pvbutfdk.json"
+                trigger="loop-on-hover"
+                style="width: 25px; height: 25px"
+              >
+              </lord-icon>
+            </button>
+
+            <!-- searchbar  -->
+            <input  class="form-control  font-size  col-12   text-center  rounded-pill  mr-sm-2  pl-5 d-none d-md-block"  
+            type="search"  placeholder="Cerca Appartamenti..."  aria-label="Search"  v-model="searchbarFilter"/>
+            
+            <!-- risultati  -->
+            <div id="result" class="filtered-apartment p-0 rounded" :class="searchbarFilter === '' ? '' : 'active'" @click="closeSearchbar()">
+              <template v-if="filteredApartment[0]">
+                  <router-link v-for="(apartment, i) in filteredApartment" :key="apartment.id" v-if="i < 15" class="single-collection" :to="{
+                                name: 'apartment.show',
+                                params: { slug: apartment.slug },
+                            }">
+                    
+                        <!-- img collezione  -->
+                        <figure class="apartment-logo d-none d-xl-block">
+                            <img :src="apartment.cover" class="collection-logo" alt="" width='90' height='90'>
+                        </figure>
+
+                        <!-- info collezione  -->
+                        <div class="collection">
+                            <span class="collection-name">{{apartment.title}}</span> 
+                        </div>
+                      
+                    
+                        
+                    
+                </router-link>
+              </template>
+              
+              <template v-else>
+                  <div class="no-result">
+                      <h3>Nessun appartamento trovato</h3>
+                  </div>
+              </template>
+
+              
+              
+          </div>
+          </form>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav align-items-end ml-auto">
@@ -156,11 +203,139 @@
 
 <script>
     export default {
-        
+        data() {
+    return {
+      users: [],
+      searchbarFilter: '',
     }
+  },
+  methods: {
+    fetchApartment() {
+      axios
+        .get("/api/home")
+        .then((res) => {
+            const { users } = res.data;
+            this.users = users
+            console.log(this.users)
+        })
+        .catch((err) => {
+            console.warn(err);
+            this.$router.push("/404");
+        });
+    },
+    closeSearchbar() {
+      this.searchbarFilter = ''
+      
+      if(this.$route.path == '/apartment/:slug') {
+        this.$router.go()
+      }
+      
+    }
+  },
+  mounted() {
+    this.fetchApartment()
+
+  },
+  computed: {
+    filteredApartment: function() {
+      return this.users.filter(el => {
+          if (el.title) {
+              return el.title.toLowerCase().includes(this.searchbarFilter.toLowerCase())
+          }
+      })
+    }
+    }
+}
 </script>
 
 <style lang="scss" scoped>
+
+.dropdown-wrapper {
+  background-color: transparent;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.filtered-apartment {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 150%;
+    max-height: 800px;
+    overflow: auto;
+    background-color:lightgrey;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+    z-index: 999;
+    box-shadow: 5px 5px 9px 1px rgba(0,0,0,0.63);
+}
+
+.filtered-apartment.active {
+    display: block;
+}
+
+.apartment-logo {
+  border: 3px solid black;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 5px;
+  min-width: 95px;
+  min-height: 90px;
+}
+
+.page-link {
+  padding: 0;
+  margin: 0;
+}
+
+.single-collection {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-align: left;
+    font-size: 1rem;
+    padding: 5px;
+  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.collection-name {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.single-collection:nth-child(odd) {
+    background-color: white;
+}
+
+.single-collection:nth-child(even) {
+    background-color: #ff385c;
+    color: white;
+}
+
+.single-collection:hover {
+    background-color: #fc1b45;
+    color: white;
+}
+
+.no-result {
+    min-height: 300px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 1.5rem;
+}
 
 .bg-color {
     background-color: #f7f7f7;
