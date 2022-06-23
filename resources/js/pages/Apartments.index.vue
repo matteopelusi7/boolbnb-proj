@@ -20,24 +20,27 @@
                         </router-link>
                     </ul>
                     <div class="container py-4">
-                        <ul class="pagination flex justify-center gap-4 item-center">
-                            <li @click="fetchUsers(n)" :class="[ currentPage === n ? 'bg-orange-400' : 'bg-white-400', 'dot bg-white/30 rounded-full cursor-pointer h-10 w-10 flex items-center justify-center text-sm']" v-for="n in lastPage" :key="n">
+                        <ul class="pagination d-flex justify-content-center gap-3 align-item-center">
+                            <li @click="fetchUsers(n)" :class="currentPage === n ? 'bg-gl1' : 'bg-gl2'" class="d-flex justify-content-center align-items-center cursor-pointer rounded-circle pagination-button" v-for="n in lastPage" :key="n">
                                 {{ n }}
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div>
-                    <h2 class="text-center pb-5 font-title">Pagina per filtrare appartamenti</h2>
-                     <router-link
-                        tag="a"
-                        :to="{
-                            name: 'filter-page',
-                        }"
-                        class="cursor-pointer"
-                    >
-                    Vai alla pagina
-                    </router-link>
+                <div class="d-flex flex-column justify-content-center">
+                    <h2 class="text-center pt-5 font-title">Ricerca Avanzata</h2>
+                    <p class="text-center pb-5">Vai alla pagina di ricerva avanzata</p>
+                    <div class="d-flex justify-content-center">
+                        <router-link
+                            tag="a"
+                            :to="{
+                                name: 'filter-page',
+                            }"
+                            class="cursor-pointer search rounded-pill"
+                        >
+                            Vai!
+                        </router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,7 +106,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 ul {
     list-style: none;
@@ -130,6 +133,16 @@ ul {
     font-weight: 800;
 }
 
+.search {
+    color: currentColor;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    background-color: #ff385c;
+    color: white;
+    padding: 5px 30px;
+}
+
 .card-footer {
     gap: 10px;
 }
@@ -145,6 +158,30 @@ ul {
 
 .address-ap, .sqm-ap {
     color: #797187;
+}
+
+.pagination {
+    gap: 20px;
+}
+
+.pagination-button {
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.bg-gl1 {
+  background-color: #fc1b45;
+  color: white;
+}
+
+.bg-gl2 {
+  background-color: #fd627e;
+  color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 </style>

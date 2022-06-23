@@ -27,6 +27,9 @@ Route::namespace('Api')->group(function () {
     Route::resource('user', 'ApUsController')->only([
         'index', 'show'
     ]);
+    Route::resource('search', 'SearchController')->only([
+        'index', 'show'
+    ]);
     Route::resource('add', 'AddsController')->only([
         'index', 'show'
     ]);

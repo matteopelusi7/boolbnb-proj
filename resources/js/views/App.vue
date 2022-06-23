@@ -212,7 +212,7 @@
   methods: {
     fetchApartment() {
       axios
-        .get("/api/home")
+        .get("/api/search")
         .then((res) => {
             const { users } = res.data;
             this.users = users
