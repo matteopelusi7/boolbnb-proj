@@ -23,6 +23,8 @@ class CreateApartmentsTable extends Migration
             $table->string('sqm', 100);
             $table->string('address', 200);
             $table->string('cover')->nullable();
+            $table->text('description');
+            $table->string('price', 200);
             $table->boolean('visible')->default(true);
             $table->timestamps();
         });

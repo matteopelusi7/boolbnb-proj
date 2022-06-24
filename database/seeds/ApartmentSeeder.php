@@ -4,8 +4,8 @@ use App\Add;
 use App\Apartment;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Config;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Config;
 
 class ApartmentsSeeder extends Seeder
 {
@@ -32,10 +32,12 @@ class ApartmentsSeeder extends Seeder
             $apartments->sqm = $element['sqm'];
             $apartments->address = $element['address'];
             $apartments->cover = $element['cover'];
+            $apartments->description = $element['description'];
+            $apartments->price = $element['price'];
             $apartments->visible = $element['visible'];
             $apartments->user_id = $element['user_id'];
 
-            $randomInt = $faker->numberBetween(1,3);
+            $randomInt = $faker->numberBetween(1,5);
             $randomTipologies = $faker->randomElements($addsId,$randomInt);
 
             $apartments->save();

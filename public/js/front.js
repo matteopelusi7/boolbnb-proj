@@ -2021,6 +2021,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2034,19 +2058,24 @@ __webpack_require__.r(__webpack_exports__);
       success: null,
       vote: [{
         id: 1,
-        rec: '4.88'
+        rec: '4.88',
+        num: '20'
       }, {
         id: 2,
-        rec: '5.00'
+        rec: '5.00',
+        num: '25'
       }, {
         id: 3,
-        rec: '4.70'
+        rec: '4.70',
+        num: '50'
       }, {
         id: 4,
-        rec: '4.50'
+        rec: '4.50',
+        num: '10'
       }, {
         id: 5,
-        rec: '4.20'
+        rec: '4.20',
+        num: '37'
       }],
       form: {
         email: "",
@@ -2111,6 +2140,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LoadingWheel_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/LoadingWheel.vue */ "./resources/js/components/LoadingWheel.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
 //
 //
 //
@@ -2240,6 +2273,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_LoadingWheel_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/LoadingWheel.vue */ "./resources/js/components/LoadingWheel.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
 //
 //
 //
@@ -2713,7 +2750,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-b8678cfc] {\n  list-style: none;\n}\n.border-rd[data-v-b8678cfc] {\n  border-radius: 12px;\n  cursor: pointer;\n}\n.opacity[data-v-b8678cfc]:hover {\n  filter: contrast(80%);\n  transition: all 0.3s ease-in-out;\n}\n.gap-bg[data-v-b8678cfc] {\n  gap: 15px;\n}\n.bg-it[data-v-b8678cfc] {\n  background-color: #ff385c;\n}", ""]);
+exports.push([module.i, ".text-gl[data-v-b8678cfc] {\n  text-decoration: underline;\n  font-weight: 600;\n}\n.descr-gl[data-v-b8678cfc] {\n  font-weight: 500;\n}\n.price-ap[data-v-b8678cfc] {\n  font-weight: 500;\n}\n.after-gl[data-v-b8678cfc]::after {\n  content: \"\";\n  display: block;\n  width: 100%;\n  height: 1px;\n  background-color: lightgray;\n}\n.tex[data-v-b8678cfc] {\n  font-weight: 700;\n  font-size: 25px;\n}\n.title-gl[data-v-b8678cfc] {\n  font-weight: 600;\n}\n.text-gl-2[data-v-b8678cfc] {\n  font-weight: 600;\n}\n.title[data-v-b8678cfc] {\n  font-weight: 700;\n  font-size: 35px;\n}\nul[data-v-b8678cfc] {\n  list-style: none;\n}\n.border-rd[data-v-b8678cfc] {\n  border-radius: 12px;\n  cursor: pointer;\n}\n.opacity[data-v-b8678cfc]:hover {\n  filter: contrast(90%);\n  transition: all 0.3s ease-in-out;\n}\n.bg-it[data-v-b8678cfc] {\n  background-color: #ff385c;\n}", ""]);
 
 // exports
 
@@ -2732,7 +2769,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul {\n  list-style: none;\n}\n.border-rd {\n  border-radius: 12px;\n}\n.list-wrap {\n  gap: 20px 0px;\n}\n.card {\n  border: none;\n}\n.gap-bg {\n  cursor: pointer;\n}\n.font-title {\n  font-size: 35px;\n  font-weight: 800;\n}\n.search {\n  color: currentColor;\n  text-decoration: none;\n  text-align: center;\n  font-size: 20px;\n  background-color: #ff385c;\n  color: white;\n  padding: 5px 30px;\n}\n.card-footer {\n  gap: 10px;\n}\n.title-ap {\n  font-weight: 700;\n  font-size: 15px;\n}\n.rec {\n  font-weight: 600;\n}\n.address-ap, .sqm-ap {\n  color: #797187;\n}\n.pagination {\n  gap: 20px;\n}\n.pagination-button {\n  cursor: pointer;\n  padding: 10px 15px;\n}\n.bg-gl1 {\n  background-color: #fc1b45;\n  color: white;\n}\n.bg-gl2 {\n  background-color: #fd627e;\n  color: white;\n}\na:hover {\n  text-decoration: none;\n  color: white;\n}", ""]);
+exports.push([module.i, "ul {\n  list-style: none;\n}\n.border-rd {\n  border-radius: 12px;\n}\n.list-wrap {\n  gap: 20px 0px;\n}\n.card {\n  border: none;\n}\n.gap-bg {\n  cursor: pointer;\n}\n.font-title {\n  font-size: 35px;\n  font-weight: 800;\n}\n.search {\n  color: currentColor;\n  text-decoration: none;\n  text-align: center;\n  font-size: 20px;\n  background-color: #ff385c;\n  color: white;\n  padding: 5px 30px;\n}\n.card-footer {\n  gap: 10px;\n}\n.title-ap {\n  font-weight: 700;\n  font-size: 15px;\n}\n.rec {\n  font-weight: 600;\n}\n.address-ap, .sqm-ap {\n  color: #797187;\n}\n.pagination {\n  gap: 20px;\n}\n.pagination-button {\n  cursor: pointer;\n  padding: 10px 15px;\n}\n.bg-gl1 {\n  background-color: #fc1b45;\n  color: white;\n}\n.bg-gl2 {\n  background-color: #fd627e;\n  color: white;\n}\na:hover {\n  text-decoration: none;\n  color: white;\n}\n.price-ap {\n  font-weight: 800;\n}", ""]);
 
 // exports
 
@@ -2751,7 +2788,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "ul[data-v-4f548cf0] {\n  list-style: none;\n}\n.title[data-v-4f548cf0] {\n  font-weight: 700;\n}\na[data-v-4f548cf0] {\n  text-decoration: none;\n  color: currentColor;\n}\n.filter[data-v-4f548cf0] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-4f548cf0] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.title-rest[data-v-4f548cf0] {\n  font-weight: 800;\n  font-size: 40px;\n}\nul li input[type=checkbox][data-v-4f548cf0] {\n  display: none;\n}\n.selected[data-v-4f548cf0] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n  border: 1px solid transparent;\n}\ninput[type=checkbox]:checked ~ label[data-v-4f548cf0] {\n  padding: 10px 30px;\n  background-color: #ff385c;\n  color: white;\n  box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);\n}\n.counter[data-v-4f548cf0] {\n  background-color: #12a199;\n  border-radius: 100%;\n  padding: 10px 10px;\n  height: 26px;\n  width: 26px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}", ""]);
+exports.push([module.i, "ul[data-v-4f548cf0] {\n  list-style: none;\n}\n.title[data-v-4f548cf0] {\n  font-weight: 700;\n}\na[data-v-4f548cf0] {\n  text-decoration: none;\n  color: currentColor;\n}\n.filter[data-v-4f548cf0] {\n  display: flex;\n  gap: 12px;\n  list-style: none;\n}\n.tipologies-card[data-v-4f548cf0] {\n  gap: 0 5px;\n  padding: 0 10px 30px 10px;\n}\n.price-ap[data-v-4f548cf0] {\n  font-weight: 800;\n}\n.title-rest[data-v-4f548cf0] {\n  font-weight: 800;\n  font-size: 40px;\n}\nul li input[type=checkbox][data-v-4f548cf0] {\n  display: none;\n}\n.selected[data-v-4f548cf0] {\n  position: relative;\n  display: inline-block;\n  padding: 10px 30px;\n  cursor: pointer;\n  width: 170px;\n  border-radius: 30px;\n  border: 1px solid transparent;\n}\ninput[type=checkbox]:checked ~ label[data-v-4f548cf0] {\n  padding: 10px 30px;\n  background-color: #ff385c;\n  color: white;\n  box-shadow: 1px 12px 10px -5px rgba(0, 211, 168, 0.78);\n}\n.counter[data-v-4f548cf0] {\n  background-color: #12a199;\n  border-radius: 100%;\n  padding: 10px 10px;\n  height: 26px;\n  width: 26px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: white;\n}", ""]);
 
 // exports
 
@@ -4122,9 +4159,25 @@ var render = function () {
       _vm.loading
         ? _c("div", [
             _c("div", { staticClass: "container py-2" }, [
-              _c("h2", [_vm._v(_vm._s(_vm.apartment.title))]),
+              _c("h2", { staticClass: "title" }, [
+                _vm._v(_vm._s(_vm.apartment.title)),
+              ]),
               _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.apartment.address))]),
+              _c("div", { staticClass: "d-flex" }, [
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v("★ " + _vm._s(_vm.vote[_vm.random()].rec)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0 pl-3 text-gl" }, [
+                  _vm._v(_vm._s(_vm.vote[_vm.random()].num) + " recensioni"),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "m-0 pl-3" }, [_vm._v("Superhost")]),
+                _vm._v(" "),
+                _c("p", { staticClass: "pl-3 text-gl-2" }, [
+                  _vm._v(_vm._s(_vm.apartment.address)),
+                ]),
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "row m-0" }, [
                 _c("img", {
@@ -4138,60 +4191,91 @@ var render = function () {
                 }),
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "mt-4 d-flex flex-column gap-bg" }, [
-                _c("h3", { staticClass: "mb-3" }, [
-                  _vm._v("Informazioni appartmento:"),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(
-                    "Numero di stanze: " + _vm._s(_vm.apartment.number_of_room)
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(
-                    "Numero di letti: " +
-                      _vm._s(_vm.apartment.number_of_bedroom)
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(
-                    "Numero di bagni: " +
-                      _vm._s(_vm.apartment.number_of_bathroom)
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v("Metri quadri: " + _vm._s(_vm.apartment.sqm)),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(
-                    "Media recensioni: " + _vm._s(_vm.vote[_vm.random()].rec)
-                  ),
-                ]),
-              ]),
+              _c(
+                "div",
+                { staticClass: "mt-4 d-flex flex-column gap-bg after-gl" },
+                [
+                  _c("h3", { staticClass: "mb-3 mt-3 tex" }, [
+                    _vm._v("Informazioni appartmento:"),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "m-0 p-0 title-gl d-flex" }, [
+                    _vm._v("Numero di stanze: \n                    "),
+                    _c("p", { staticClass: "descr-gl" }, [
+                      _vm._v(" " + _vm._s(_vm.apartment.number_of_room)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "m-0 title-gl d-flex" }, [
+                    _vm._v("Numero di letti: \n                    "),
+                    _c("p", { staticClass: "descr-gl" }, [
+                      _vm._v(" " + _vm._s(_vm.apartment.number_of_bedroom)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "m-0 title-gl d-flex" }, [
+                    _vm._v("Numero di bagni: \n                    "),
+                    _c("p", { staticClass: "descr-gl" }, [
+                      _vm._v(" " + _vm._s(_vm.apartment.number_of_bathroom)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "m-0 title-gl d-flex" }, [
+                    _vm._v("Metri quadri: \n                    "),
+                    _c("p", { staticClass: "descr-gl" }, [
+                      _vm._v(" " + _vm._s(_vm.apartment.sqm)),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "m-0 d-flex title-gl mb-3" }, [
+                    _vm._v("Prezzo:\n                    "),
+                    _c("p", { staticClass: "m-0 price-ap" }, [
+                      _vm._v(
+                        "  " + _vm._s(_vm.apartment.price) + " €   /notte"
+                      ),
+                    ]),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "mt-4 " }, [
-                _c("h4", { staticClass: "mb-3" }, [
-                  _vm._v("Servizi Aggiuntivi:"),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "ul",
-                  { staticClass: "p-0" },
-                  _vm._l(_vm.apartment.adds, function (el) {
-                    return _c("li", { key: el.id }, [_vm._v(_vm._s(el.name))])
-                  }),
-                  0
-                ),
-              ]),
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-4 d-flex flex-column gap-bg after-gl" },
+                [
+                  _c("p", [
+                    _vm._v(
+                      "Alcune informazioni sono state tradotte automaticamente."
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [_vm._v(_vm._s(_vm.apartment.description))]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "mt-4 d-flex flex-column gap-bg after-gl" },
+                [
+                  _c("h4", { staticClass: "mb-1 title-gl" }, [
+                    _vm._v("Cosa troverai:"),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    { staticClass: "p-0" },
+                    _vm._l(_vm.apartment.adds, function (el) {
+                      return _c("li", { key: el.id }, [_vm._v(_vm._s(el.name))])
+                    }),
+                    0
+                  ),
+                ]
+              ),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "container py-2" }, [
-              _c("h2", [
+            _c("div", { staticClass: "container py-4" }, [
+              _c("h2", { staticClass: "title-gl" }, [
                 _vm._v(
                   "Invia un messaggio al proprietario dell 'appartamento per ulteriori informazioni"
                 ),
@@ -4293,7 +4377,36 @@ var render = function () {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "mt-4 d-flex flex-column gap-bg after-gl" },
+      [
+        _c("img", {
+          staticClass: "mb-3",
+          attrs: {
+            src: "https://a0.muscache.com/im/pictures/54e427bb-9cb7-4a81-94cf-78f19156faad.jpg",
+            width: "100px",
+            height: "30px",
+            alt: "",
+          },
+        }),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Ogni prenotazione include una protezione gratuita in caso di cancellazione da parte dell'host, di inesattezze dell'annuncio e di altri problemi come le difficoltà in fase di check-in."
+          ),
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-gl" }, [_vm._v("Per saperne di più")]),
+      ]
+    )
+  },
+]
 render._withStripped = true
 
 
@@ -4374,11 +4487,22 @@ var render = function () {
                                   _c("p", { staticClass: "m-0 sqm-ap" }, [
                                     _vm._v(_vm._s(user.sqm)),
                                   ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "m-0 d-flex" }, [
+                                    _c("p", { staticClass: "m-0 price-ap" }, [
+                                      _vm._v(_vm._s(user.price) + " €  "),
+                                    ]),
+                                    _vm._v(
+                                      "\n                                   /notte\n                                "
+                                    ),
+                                  ]),
                                 ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "pt-1" }, [
                                   _c("p", { staticClass: "rec" }, [
-                                    _vm._v(_vm._s(_vm.vote[_vm.random()].rec)),
+                                    _vm._v(
+                                      _vm._s(_vm.vote[_vm.random()].rec) + " ★"
+                                    ),
                                   ]),
                                 ]),
                               ]
@@ -4605,7 +4729,7 @@ var render = function () {
                                         "span",
                                         {
                                           staticClass:
-                                            "text-center text-md-left font-weight-bold",
+                                            "text-center text-md-left font-weight-bold mr-2",
                                         },
                                         [
                                           _vm._v(
@@ -4697,6 +4821,28 @@ var render = function () {
                                               { staticClass: "m-0 sqm-ap" },
                                               [_vm._v(_vm._s(user.sqm))]
                                             ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "div",
+                                              { staticClass: "m-0 d-flex" },
+                                              [
+                                                _c(
+                                                  "p",
+                                                  {
+                                                    staticClass: "m-0 price-ap",
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(user.price) +
+                                                        " €  "
+                                                    ),
+                                                  ]
+                                                ),
+                                                _vm._v(
+                                                  "\n                                                    /notte\n                                                "
+                                                ),
+                                              ]
+                                            ),
                                           ]),
                                           _vm._v(" "),
                                           _c("div", { staticClass: "pt-1" }, [
@@ -4704,7 +4850,7 @@ var render = function () {
                                               _vm._v(
                                                 _vm._s(
                                                   _vm.vote[_vm.random()].rec
-                                                )
+                                                ) + " ★"
                                               ),
                                             ]),
                                           ]),

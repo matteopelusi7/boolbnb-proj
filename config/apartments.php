@@ -10,6 +10,8 @@ return [
         "sqm" => "150mq",
         "address" => "Via Roma, 40",
         "cover" => "https://a0.muscache.com/im/pictures/15bc740b-aeb5-44d0-9feb-b79aa9591b61.jpg?im_w=720",
+        "description" => "La villa si trova piedi dans l'eau sul lago nel centro storico di Brienno, un piccolo villaggio a 17 km a nord di Como e 7 km dall'autostrada La proprietà è un'antica filanda di seta risalente al XVII secolo splendidamente ristrutturata. I rivestimenti in pietra, gli alti soffitti a volta e l'antica ciminiera si alternano agli eleganti interni di design chic industriale e alle opere d'arte contemporanea, in un perfetto e sofisticato mix. Le grandi finestre offrono una vista strepitosa sul lago.",
+        "price" => "300",
         "visible" => true
     ],
     [
@@ -21,6 +23,8 @@ return [
         "sqm" => "80mq",
         "address" => "Via Milano, 10",
         "cover" => "https://a0.muscache.com/im/pictures/953dbee9-ec7d-4608-96c1-11a0e8544b64.jpg?im_w=720",
+        "description" => "Un luogo esclusivo per godersi il fascino di una storia secolare. Un angolo riservato, dove poter godere di momenti unici di benessere, godersi la tranquillità del lago e ascoltare il silenzio delle sue albe e tramonti. The Writer's Nest è l'antico rifugio di cavatori di pietra, costruito alla fine dell'Ottocento, all'interno di una cava di pietra. Lo scrittore e proprietario Giuseppe Guin in quel luogo, pieno di storie e leggende, ha ambientato i suoi romanzi.",
+        "price" => "65",
         "visible" => true
     ],
     [
@@ -32,6 +36,8 @@ return [
         "sqm" => "100mq",
         "address" => "Via Ossi, 78",
         "cover" => "https://a0.muscache.com/im/pictures/4ee30c9a-4a82-44b1-9c37-099eceb36acd.jpg?im_w=720",
+        "description" => "Un luogo esclusivo per godersi il fascino di una storia secolare. Un angolo riservato, dove poter godere di momenti unici di benessere, godersi la tranquillità del lago e ascoltare il silenzio delle sue albe e tramonti. The Writer's Nest è l'antico rifugio di cavatori di pietra, costruito alla fine dell'Ottocento, all'interno di una cava di pietra. Lo scrittore e proprietario Giuseppe Guin in quel luogo, pieno di storie e leggende, ha ambientato i suoi romanzi.",
+        "price" => "280",
         "visible" => true
     ],
     [
@@ -43,6 +49,8 @@ return [
         "sqm" => "70mq",
         "address" => "Via Albo, 15",
         "cover" => "https://a0.muscache.com/im/pictures/e47c0a48-4f10-470d-aa86-66f79ae86f20.jpg?im_w=720",
+        "description" => "Rilassati in questo splendido patio direttamente sull'acqua! L'appartamento è finemente arredato con mobili di design e situato nella storica Villa Taverna a Torno sul Lago di Como ed è un'opportunità unica per soggiornare in una delle proprietà residenziali più prestigiose del lago - questo è l'unico appartamento sul lago di Como con una terrazza sull'acqua all'interno di una storica Villa neoclassica con un enorme parco botanico secolare a soli 5 km dal centro di Como e un PARCHEGGIO PRIVATO ALL'APERTO GRATUITO all'interno della proprietà. Standard elevati di pulizia e igiene.",
+        "price" => "160",
         "visible" => true
     ],
     [
@@ -54,6 +62,8 @@ return [
         "sqm" => "170mq",
         "address" => "Via Roma, 2",
         "cover" => "https://a0.muscache.com/im/pictures/9cad8847-8d31-494f-b173-1e6913409727.jpg?im_w=720",
+        "description" => "Completamente ristrutturata nell'inverno 2022, Villa Il Cigno si trova direttamente sulle spettacolari rive del lago di Como, affacciata su un paesaggio unico delle Alpi e stupisce a prima vista per le sue imponenti dimensioni e il suo fascino. La proprietà fronte lago è ideale per chi ama il lusso e la vita al massimo con un lussureggiante parco ampio e rilassante su cui si affacciano alberi secolari. Per goderti il tuo soggiorno puoi fare direttamente un giro in kayak o noleggiare una barca che ti verrà a prendere direttamente in casa.",
+        "price" => "1020",
         "visible" => true
     ],
     [
@@ -65,6 +75,8 @@ return [
         "sqm" => "80mq",
         "address" => "Via Sante, 50",
         "cover" => "https://a0.muscache.com/im/pictures/miso/Hosting-50133096/original/cfb32fd7-d7ac-4825-829b-2bbce7a0ba42.jpeg?im_w=720",
+        "description" => "Scoprite l'elegante eclettismo di Villa Matilda grazie alle sue camere arredate in modo vivace che vantano una serie di incantevoli opere d'arte, arredi raffinati e un mix di dettagli d'epoca. Nuota in piscina ammirando le viste mozzafiato sulle montagne e sui laghi.",
+        "price" => "420",
         "visible" => true
     ],
     [
@@ -76,6 +88,8 @@ return [
         "sqm" => "100mq",
         "address" => "Via Livorno, 85",
         "cover" => "https://a0.muscache.com/im/pictures/e90bb2b7-2bfe-47fd-893c-bb3d11d5bced.jpg?im_w=720",
+        "description" => "Questo tranquillo rifugio vista lago è vicinissimo alla riva dove gli ospiti possono acquistare escursioni in barca.",
+        "price" => "550",
         "visible" => true
     ],
     [
@@ -87,6 +101,8 @@ return [
         "sqm" => "200mq",
         "address" => "Via Pisa, 25",
         "cover" => "https://a0.muscache.com/im/pictures/prohost-api/Hosting-594071522586411392/original/31969295-5e1c-4755-902f-7681061f0f35.jpeg?im_w=720",
+        "description" => "Questa meravigliosa proprietà di 170 m ² risale a oltre 500 anni fa. Arredata su tre piani, il suo stile unico combina le caratteristiche originali con camere da letto e bagni moderni splendidamente progettati. Situato sul lungomare del Lago di Como, l'ultimo piano si apre su una spaziosa terrazza sul tetto che offre zona pranzo all'aperto, aree per rilassarsi e una vista mozzafiato sul lago. Laglio offre una serie di posti per mangiare e bere, negozi locali, un parco giochi per bambini, una piccola spiaggia e un ampio parcheggio nelle vicinanze.",
+        "price" => "2221",
         "visible" => true
     ],
     [
@@ -98,6 +114,8 @@ return [
         "sqm" => "70mq",
         "address" => "Via Roma, 80",
         "cover" => "https://a0.muscache.com/im/pictures/prohost-api/Hosting-587912283786982667/original/79112d25-3cf4-4588-a788-ff13337d4bd7.png?im_w=720",
+        "description" => "La nostra Villa si trova proprio di fronte alla città di Como, con una vista impareggiabile e a 180 gradi sul lago. Il centro di Como è raggiungibile in auto, in bicicletta, in autobus o anche in barca, poiché è disponibile un servizio pubblico di trasporto barche. Il servizio Barca -situato a 50 metri dalla nostra struttura- vi porterà direttamente al centro di Como in 8 minuti.",
+        "price" => "180",
         "visible" => true
     ],
     [
@@ -109,6 +127,8 @@ return [
         "sqm" => "150mq",
         "address" => "Via Milano, 70",
         "cover" => "https://a0.muscache.com/im/pictures/miso/Hosting-606777970118049081/original/a61456ae-8f6c-4f06-99ab-760e1e09f279.jpeg?im_w=720",
+        "description" => "L'appartamento, su due piani, è composto da un grande soggiorno con due divani (di cui uno può diventare letto matrimoniale) e un grande tavolo. A vista si apre sul soggiorno una grande cucina attrezzata. Il pian terreno ha uno splendido affaccio sul lago di Pusiano, con un terrazzo dove si può pranzare, cenare, prendere il sole o godersi il panorama. Al primo piano ci sono due stanze da letto e una cabina armadio. In casa ci sono 3 bagni, di cui 2 con doccia.",
+        "price" => "650",
         "visible" => true
     ],
     [
@@ -120,6 +140,8 @@ return [
         "sqm" => "125mq",
         "address" => "Via Roma, 5",
         "cover" => "https://a0.muscache.com/im/pictures/20fa3634-1692-4847-893d-9c2e957adbc7.jpg?im_w=720",
+        "description" => "Godetevi la vostra vacanza sul lago di como in questa splendida villa moderna dotata di tutti i comfort, per una vacanza in completo relax. La Villa, di nuovissima costruzione, si trova a Carate Urio, una delle zone più eleganti e tranquille del Lago di Como. E' composta da 4 camere da letto, 3 bagni, ampi terrazzi, piscina privata, giardino e posto auto.",
+        "price" => "720",
         "visible" => true
     ],
     [
@@ -131,6 +153,8 @@ return [
         "sqm" => "115mq",
         "address" => "Via Como, 88",
         "cover" => "https://a0.muscache.com/im/pictures/4e99114a-a04e-49d5-901e-e6666033d925.jpg?im_w=720",
+        "description" => "La casa si trova su un promontorio lungo la strada che da Como porta al piccolo borgo di Blevio. Dal piccolo giardino privato e da ogni stanza della casa si possono ammirare le splendide rive che accolgono Cernobbio e le sue ville.",
+        "price" => "150",
         "visible" => true
     ],
     [
@@ -142,6 +166,8 @@ return [
         "sqm" => "270mq",
         "address" => "Via Garibaldi, 40",
         "cover" => "https://a0.muscache.com/im/pictures/monet/Select-9377019/original/3cd14650-f88f-4004-aea9-f1a12ac40e1f?im_w=720",
+        "description" => "Vista sul lago al tramonto! Con una vista sul lago di grande effetto che lascia incantati, questo delizioso duplex offre un fantastico ritiro per gruppi di 8. Situato in una soleggiata residenza collinare a Faggeto Lario, gli ospiti possono facilmente rilassarsi in una tranquillità senza tempo, pur essendo a breve distanza in auto dalle delizie di Como e del lago centrale.",
+        "price" => "3800",
         "visible" => true
     ],
     [
@@ -153,6 +179,8 @@ return [
         "sqm" => "180mq",
         "address" => "Via Da Vinci, 30",
         "cover" => "https://a0.muscache.com/im/pictures/monet/Select-26286147/original/814d66bc-ed89-44d0-8bfe-9fdd17d80a52?im_w=720",
+        "description" => "Fuga per coppie o viaggiatori del mondo nel cuore della città di Lecco, a pochi passi dalla stazione dei treni. L'alto soffitto in legno ha una finestra posta sopra il letto da dove si può guardare il cielo stellato e lo splendido scenario in riva al lago Como. Ti sembrerà di navigare tra le nuvole!",
+        "price" => "1200",
         "visible" => true
     ],
     [
@@ -164,6 +192,8 @@ return [
         "sqm" => "90mq",
         "address" => "Via Salite, 92",
         "cover" => "https://a0.muscache.com/im/pictures/miso/Hosting-51180654/original/20044d64-7e7a-4da4-9e94-3f5a8a9f48ff.jpeg?im_w=720",
+        "description" => "Caratteristico appartamento nel borgo di Pognana Lario, con spettacolare vista lago. L’ alloggio dispone di cucina completa con camino e balcone vista, 3 camere da letto matrimoniali e un letto singolo, area relax con divano letto matrimoniale, smart tv, Wi-fi, bagno con doccia e bagno di servizio.",
+        "price" => "300",
         "visible" => true
     ],
     [
@@ -175,6 +205,8 @@ return [
         "sqm" => "70mq",
         "address" => "Via Palermo, 15",
         "cover" => "https://a0.muscache.com/im/pictures/074f8383-2194-4a3d-8f3d-ca8dce154cdb.jpg?im_w=720",
+        "description" => "La villa si trova piedi dans l'eau sul lago nel centro storico di Brienno, un piccolo villaggio a 17 km a nord di Como e 7 km dall'autostrada La proprietà è un'antica filanda di seta risalente al XVII secolo splendidamente ristrutturata. I rivestimenti in pietra, gli alti soffitti a volta e l'antica ciminiera si alternano agli eleganti interni di design chic industriale e alle opere d'arte contemporanea, in un perfetto e sofisticato mix. Le grandi finestre offrono una vista strepitosa sul lago.",
+        "price" => "210",
         "visible" => true
     ],
     [
@@ -186,6 +218,8 @@ return [
         "sqm" => "190mq",
         "address" => "Via Milano, 22",
         "cover" => "https://a0.muscache.com/im/pictures/25ea5f9d-4dfe-4f06-bcb5-ab41451566fd.jpg?im_w=720",
+        "description" => "Un luogo esclusivo per godersi il fascino di una storia secolare. Un angolo riservato, dove poter godere di momenti unici di benessere, godersi la tranquillità del lago e ascoltare il silenzio delle sue albe e tramonti. The Writer's Nest è l'antico rifugio di cavatori di pietra, costruito alla fine dell'Ottocento, all'interno di una cava di pietra. Lo scrittore e proprietario Giuseppe Guin in quel luogo, pieno di storie e leggende, ha ambientato i suoi romanzi.",
+        "price" => "750",
         "visible" => true
     ],
     [
@@ -197,6 +231,8 @@ return [
         "sqm" => "90mq",
         "address" => "Via Catania, 30",
         "cover" => "https://a0.muscache.com/im/pictures/9a253344-3158-4b08-9e83-cad61e9dfb8d.jpg?im_w=720",
+        "description" => "Rilassati in questo splendido patio direttamente sull'acqua! L'appartamento è finemente arredato con mobili di design e situato nella storica Villa Taverna a Torno sul Lago di Como ed è un'opportunità unica per soggiornare in una delle proprietà residenziali più prestigiose del lago - questo è l'unico appartamento sul lago di Como con una terrazza sull'acqua all'interno di una storica Villa neoclassica con un enorme parco botanico secolare a soli 5 km dal centro di Como e un PARCHEGGIO PRIVATO ALL'APERTO GRATUITO all'interno della proprietà. Standard elevati di pulizia e igiene.",
+        "price" => "85",
         "visible" => true
     ],
     [
@@ -208,6 +244,8 @@ return [
         "sqm" => "90mq",
         "address" => "Via Pini, 77",
         "cover" => "https://a0.muscache.com/im/pictures/miso/Hosting-50612764/original/ba8ebe18-1a26-4463-a7e5-33345d4e7e77.jpeg?im_w=720",
+        "description" => "Un luogo esclusivo per godersi il fascino di una storia secolare. Un angolo riservato, dove poter godere di momenti unici di benessere, godersi la tranquillità del lago e ascoltare il silenzio delle sue albe e tramonti. The Writer's Nest è l'antico rifugio di cavatori di pietra, costruito alla fine dell'Ottocento, all'interno di una cava di pietra. Lo scrittore e proprietario Giuseppe Guin in quel luogo, pieno di storie e leggende, ha ambientato i suoi romanzi.",
+        "price" => "340",
         "visible" => true
     ],
     [
@@ -219,6 +257,8 @@ return [
         "sqm" => "175mq",
         "address" => "Via Doria, 6",
         "cover" => "https://a0.muscache.com/im/pictures/44097ff6-2d4d-428c-92ae-1c149b0001ab.jpg?im_w=720",
+        "description" => "Completamente ristrutturata nell'inverno 2022, Villa Il Cigno si trova direttamente sulle spettacolari rive del lago di Como, affacciata su un paesaggio unico delle Alpi e stupisce a prima vista per le sue imponenti dimensioni e il suo fascino. La proprietà fronte lago è ideale per chi ama il lusso e la vita al massimo con un lussureggiante parco ampio e rilassante su cui si affacciano alberi secolari. Per goderti il tuo soggiorno puoi fare direttamente un giro in kayak o noleggiare una barca che ti verrà a prendere direttamente in casa.",
+        "price" => "2100",
         "visible" => true
     ],
 ];

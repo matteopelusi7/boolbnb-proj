@@ -22,6 +22,7 @@
                 <th scope="col">Numero Bagni</th>
                 <th scope="col">Metri quadri</th>
                 <th scope="col">Servizi Aggiuntivi</th>
+                <th scope="col">Prezzo</th>
                 <th scope="col">Indirizzo</th>
                 <th scope="col">Sponsorizza</th>
                 <th scope="col">Visibilità</th>
@@ -50,6 +51,7 @@
                             <p>{{ $add->name }}</p>
                         @endforeach
                     </td>
+                    <td>{{ $apartment->price }} &euro; /notte</td>
                     <td>{{ $apartment->address }}</td>
                     @if ($apartment->visible == 0)
                     <td>

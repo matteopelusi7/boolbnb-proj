@@ -12,9 +12,13 @@
                                     <p class="m-0 title-ap">{{ user.title }}</p>
                                     <p class="m-0 address-ap">{{ user.address }}</p>
                                     <p class="m-0 sqm-ap">{{ user.sqm }}</p>
+                                    <div class="m-0 d-flex">
+                                        <p class="m-0 price-ap">{{ user.price }} &euro; &nbsp;</p>
+                                       /notte
+                                    </div>
                                 </div>
                                 <div class="pt-1">
-                                    <p class="rec">{{ vote[random()].rec}}</p>
+                                    <p class="rec">{{ vote[random()].rec}} &#9733;</p>
                                 </div>
                             </div>
                         </router-link>
@@ -182,6 +186,10 @@ ul {
 a:hover {
     text-decoration: none;
     color: white;
+}
+
+.price-ap {
+    font-weight: 800;
 }
 
 </style>
