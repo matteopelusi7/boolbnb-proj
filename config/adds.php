@@ -19,4 +19,13 @@ return [
     [
         'name' => 'Vista Mare'
     ], 
+    [
+        'name' => 'Idromassaggio'
+    ], 
+    [
+        'name' => 'Palestra'
+    ], 
+    [
+        'name' => 'TV'
+    ], 
 ];

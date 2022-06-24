@@ -14,7 +14,7 @@
                                         <li v-for="add in adds" :key="add.id">
                                             <input class="mx-1" type="checkbox" v-model="addFilter" @change="check()" :id="add.id" :name="add.id" :value="add.id" />
                                             <label :for="add.id" class="d-flex justify-content-between pill-color rounded-pill selected " >
-                                                <span class="text-center text-md-left font-weight-bold">
+                                                <span class="text-center text-md-left font-weight-bold mr-2">
                                                     {{ add.name }}
                                                 </span>
                                                 <span class="counter">
@@ -40,9 +40,13 @@
                                                     <p class="m-0 title-ap">{{ user.title }}</p>
                                                     <p class="m-0 address-ap">{{ user.address }}</p>
                                                     <p class="m-0 sqm-ap">{{ user.sqm }}</p>
+                                                    <div class="m-0 d-flex">
+                                                        <p class="m-0 price-ap">{{ user.price }} &euro; &nbsp;</p>
+                                                        /notte
+                                                    </div>
                                                 </div>
                                                 <div class="pt-1">
-                                                    <p class="rec">{{ vote[random()].rec}}</p>
+                                                    <p class="rec">{{ vote[random()].rec}} &#9733;</p>
                                                 </div>
                                             </div>
                                         </router-link>
@@ -193,6 +197,10 @@ a {
 .tipologies-card {
   gap: 0 5px;
   padding: 0 10px 30px 10px;
+}
+
+.price-ap {
+    font-weight: 800;
 }
 
 .title-rest {

@@ -29,7 +29,7 @@
                     <div class="ticket-footer py-3">
                         <a href="#" class="py-3">Sponsorizza!</a>
                     </div>
-                        <span class="featured">Featured!</span>
+                    <span class="featured">Featured!</span>
                 </div>
 
             @endforeach
